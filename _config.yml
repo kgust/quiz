@@ -1,0 +1,15 @@
+name: Gustavson Christmas Quiz 2013
+markdown: redcarpet
+pygments: true
+exclude:
+    - libs
+    - misc
+    - public
+    - tmp
+    - README.md
+    - Gemfile
+    - Gemfile.lock
+    - .git
+    - .gitignore
+    - config.ru
+destination: ./public
