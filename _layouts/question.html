@@ -1,0 +1,54 @@
+---
+layout: quiz
+---
+    {% if page.number < 10 %}
+    <form method="get" action="/question/{{page.number|plus:1}}/">
+    {% else %}
+    <form method="get" action="/score/">
+    {% endif %}
+        <div id="q1" class="page">
+            <div class="text">
+                <h2>Question {{page.number}}:</h2>
+                <h3>{{page.question}}</h3>
+                <ul>
+                    {% for answer in page.answer %}
+                        <li><label>
+                            <input type="radio" name="q{{page.number}}" value="{{forloop.index}}" />
+                            {{ answer }}
+                        </label></li>
+                    {% endfor %}
+                </ul>
+                <p class="button">
+                    <!--
+                    <button class='prev'>Go Back</button>
+                    -->
+                    <button class='next' onclick="javascript:goNext()" disabled="disabled">Next Question</button>
+                </p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="photo" id="photo{{page.number}}"></div>
+            <p style="clear: both;"> </p> 
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        var answers = store.get('answers') || [];
+
+        var index = answers[{{page.number|minus:1}}] - 1;
+        $('form input:eq(' + index + ')').click();
+
+        store.set('question', {{page.number}});
+
+        $('form :input').on('change', function(e) {
+            var answers = store.get('answers')||[]; 
+            var answer = parseInt($('form input:checked').val());
+            answers[{{page.number}}-1] = answer;
+            store.set('answers', answers);
+            $('button').removeAttr('disabled');
+        });
+
+        function goNext() {
+            window.location = $('form').attr('action');
+        }
+    </script>
+

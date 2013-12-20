@@ -1,0 +1,28 @@
+---
+layout: quiz
+question: intro
+photo: 0
+permalink: /
+---
+
+    <form method="get" action="/question/1/">
+        <div id="intro" class="page">
+            <div class="photo" id="photo0"></div>
+            <div class="text">
+                <p>Since the holidays have recently passed, it's time to take the 22<span class="super">nd</span> annual Gustavson Post-Christmas Quiz!</p>
+                <p>We welcome people of all ages to test their wit and wisdom.  Newcomers and long-time recipients will have fun completing the 10 multiple-choice questions.</p>
+                <p>Do your best, then let us know how you scored!</p>
+                <p class="button">
+                    <button class='next' onclick="onButton()">Start the Quiz</button>
+                </p>
+                <p>&nbsp;</p>
+            </div>
+            <p style="clear: both;" />
+        </div>
+
+        <script type="text/javascript">
+        function onButton() {
+          window.location = $('form').attr('action');
+        }
+        </script>
+
