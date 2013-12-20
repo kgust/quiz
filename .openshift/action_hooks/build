@@ -1,2 +1,0 @@
-echo "Building the site..."
-jekyll build
