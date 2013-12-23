@@ -20,14 +20,13 @@ layout: quiz
                 </ul>
                 <p class="button">
                     {% if page.number > 1 %}
-                    <a href="question/{{page.number|minus:1}}">Go Back</a>
+                    <a href="/question/{{page.number|minus:1}}">Go Back</a>
                     {% else %}
                     <a href="/">Go Back</a>
                     {% endif %}
 
-                    <a href="question/{{page.number|plus:1}}">Next Question</a>
                     {% if page.number < 10 %}
-                    <a href="question/{{page.number|minus:1}}">Go Back</a>
+                    <a href="/question/{{page.number|plus:1}}">Next Question</a>
                     {% else %}
                     <a href="/score">Go Back</a>
                     {% endif %}
