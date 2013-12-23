@@ -19,8 +19,18 @@ layout: quiz
                     {% endfor %}
                 </ul>
                 <p class="button">
-                    <button class='prev' onclick="javascript:goBack()">Go Back</button>
-                    <button class='next' onclick="javascript:goNext()" disabled="disabled">Next Question</button>
+                    {% if page.number > 1 %}
+                    <a href="question/{{page.number|minus:1}}">Go Back</a>
+                    {% else %}
+                    <a href="/">Go Back</a>
+                    {% endif %}
+
+                    <a href="question/{{page.number|plus:1}}">Next Question</a>
+                    {% if page.number < 10 %}
+                    <a href="question/{{page.number|minus:1}}">Go Back</a>
+                    {% else %}
+                    <a href="/score">Go Back</a>
+                    {% endif %}
                 </p>
                 <p>&nbsp;</p>
             </div>
@@ -42,15 +52,6 @@ layout: quiz
             var answer = parseInt($('form input:checked').val());
             answers[{{page.number}}-1] = answer;
             store.set('answers', answers);
-            $('button').removeAttr('disabled');
         });
-
-        function goBack() {
-            window.location = '/question/' + {{page.number}} - 1
-        }
-
-        function goNext() {
-            window.location = $('form').attr('action');
-        }
     </script>
 
