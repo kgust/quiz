@@ -19,9 +19,7 @@ layout: quiz
                     {% endfor %}
                 </ul>
                 <p class="button">
-                    <!--
-                    <button class='prev'>Go Back</button>
-                    -->
+                    <button class='prev' onclick="javascript:goBack()">Go Back</button>
                     <button class='next' onclick="javascript:goNext()" disabled="disabled">Next Question</button>
                 </p>
                 <p>&nbsp;</p>
@@ -46,6 +44,10 @@ layout: quiz
             store.set('answers', answers);
             $('button').removeAttr('disabled');
         });
+
+        function goBack() {
+            window.location = '/question/' + {{page.number}} - 1
+        }
 
         function goNext() {
             window.location = $('form').attr('action');
