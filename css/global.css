@@ -139,17 +139,17 @@ h1 {
 
 
 .next, .prev {
-    background:      green;
+    background:      #fff;
     border-radius:   7px;
     border:          1px solid #888;
     color:           #000;
-    font-size:       125%;
-    padding:         3px;
+    font:            125%/1.0 fantasy;
+    padding:         7px 15px 0;
     text-decoration: none;
 }
-    .prev {
-        background: red;
-    }
+.disabled {
+    color: #ccc;
+}
 
 .buttons {
     bottom: 10px;

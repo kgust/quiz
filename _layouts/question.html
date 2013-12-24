@@ -1,56 +1,73 @@
 ---
 layout: quiz
 ---
-    {% if page.number < 10 %}
-    <form method="get" action="/question/{{page.number|plus:1}}/">
-    {% else %}
-    <form method="get" action="/score/">
-    {% endif %}
-        <div id="q1" class="page">
-            <div class="text">
-                <h2>Question {{page.number}}:</h2>
-                <h3>{{page.question}}</h3>
-                <ul>
-                    {% for answer in page.answer %}
-                        <li><label>
-                            <input type="radio" name="q{{page.number}}" value="{{forloop.index}}" />
-                            {{ answer }}
-                        </label></li>
-                    {% endfor %}
-                </ul>
-                <p class="buttons">
-                    {% if page.number > 1 %}
-                    <a class="prev" href="/question/{{page.number|minus:1}}">Go Back</a>
-                    {% else %}
-                    <a class="prev" href="/">Go Back</a>
-                    {% endif %}
+  {% if page.number < 10 %}
+  <form method="get" action="/question/{{page.number|plus:1}}/">
+  {% else %}
+  <form method="get" action="/score/">
+  {% endif %}
+    <div id="q1" class="page">
+      <div class="text">
+        <h2>Question {{page.number}}:</h2>
+        <h3>{{page.question}}</h3>
+        <ul>
+          {% for answer in page.answer %}
+            <li><label>
+              <input type="radio" name="q{{page.number}}" value="{{forloop.index}}" />
+              {{ answer }}
+            </label></li>
+          {% endfor %}
+        </ul>
+        <p class="buttons">
+          {% if page.number > 1 %}
+          <a class="prev" href="/question/{{page.number|minus:1}}">Go Back</a>
+          {% else %}
+          <a class="prev" href="/">Go Back</a>
+          {% endif %}
 
-                    {% if page.number < 10 %}
-                    <a class="next" href="/question/{{page.number|plus:1}}">Next Question</a>
-                    {% else %}
-                    <a class="next" href="/score">What's my score?</a>
-                    {% endif %}
-                </p>
-                <p>&nbsp;</p>
-            </div>
-            <div class="photo" id="photo{{page.number}}"></div>
-            <p style="clear: both;"> </p> 
-        </div>
-    </form>
+          {% if page.number < 10 %}
+          <a class="next" href="/question/{{page.number|plus:1}}">Next Question</a>
+          {% else %}
+          <a class="next disabled">What's my score?</a>
+          {% endif %}
+        </p>
+        <p>&nbsp;</p>
+      </div>
+      <div class="photo" id="photo{{page.number}}"></div>
+      <p style="clear: both;"> </p> 
+    </div>
+  </form>
 
-    <script type="text/javascript">
-        var answers = store.get('answers') || [];
+  <script type="text/javascript">
+    var answers = store.get('answers') || [];
 
-        var index = answers[{{page.number|minus:1}}] - 1;
-        $('form input:eq(' + index + ')').click();
+    var index = answers[{{page.number|minus:1}}] - 1;
+    if (index > 0) {
+      $('form input:eq(' + index + ')').click();
+    }
 
-        store.set('question', {{page.number}});
+    $('form :input').on('change', function(e) {
+      var answers = store.get('answers')||[]; 
+      var answer = parseInt($('form input:checked').val());
+      answers[{{page.number}}-1] = answer;
+      store.set('answers', answers);
+    });
 
-        $('form :input').on('change', function(e) {
-            var answers = store.get('answers')||[]; 
-            var answer = parseInt($('form input:checked').val());
-            answers[{{page.number}}-1] = answer;
-            store.set('answers', answers);
-        });
-    </script>
+  {% if page.number > 9 %}
+    function enableNext() {
+      var count = 0;
+      $.each(store.get('answers'), function(index, answer) {
+        if (answer > 0) {
+          count++;
+        }
+      });
+      console.debug(count);
+      if (count === 10) {
+        $('.next').attr('href', '/score').removeClass('disabled');
+      }
+    }
+    enableNext();
+    $('form :input').on('change', enableNext);
+  {% endif %}
+  </script>
 
