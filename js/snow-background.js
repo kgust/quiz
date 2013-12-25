@@ -1,4 +1,3 @@
-(function() {
 
     var SCREEN_WIDTH = window.innerWidth;
     var SCREEN_HEIGHT = window.innerHeight;
@@ -18,15 +17,14 @@
     var windowHalfY = window.innerHeight / 2;
 
     var particles = []; 
-    var particleImage = new Image();//THREE.ImageUtils.loadTexture( "images/ParticleSmoke.png" );
-    particleImage.src = 'images/ParticleSmoke.png'; 
-
+    var particleImage = new Image();
+    //THREE.ImageUtils.loadTexture( "/images/ParticleSmoke.png" );
+    particleImage.src = '/images/ParticleSmoke.png'; 
 
 
     function init() {
 
-        container = document.createElement('div');
-        document.body.appendChild(container);
+        container = $('#snow-container').get(0);
 
         camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
         camera.position.z = 1000;
@@ -36,7 +34,9 @@
             
         renderer = new THREE.CanvasRenderer();
         renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-        var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
+        var material = new THREE.ParticleBasicMaterial({
+            map: new THREE.Texture(particleImage)
+        });
             
         for (var i = 0; i < 500; i++) {
 
@@ -93,8 +93,7 @@
 
     function loop() {
 
-    for(var i = 0; i<particles.length; i++)
-        {
+        for (var i = 0; i<particles.length; i++) {
 
             var particle = particles[i]; 
             particle.updatePhysics(); 
@@ -118,4 +117,3 @@
         
     }
 
-})();

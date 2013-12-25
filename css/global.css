@@ -1,7 +1,8 @@
 body {
-    font: 18px/1.4 'Amaranth', sans-serif;
-	background: #ccc;
-    /*background: #eee url(../images/white-trees.jpg) top center no-repeat;*/
+    font:       18px/1.4 'Amaranth', sans-serif;
+    background: #000044 url(/images/bg.jpg) repeat-x;
+    margin:     0;
+    position:   relative;
 }
 noscript div {
     background: transparent url(../images/content_background.png);
@@ -14,27 +15,37 @@ noscript div {
     -ms-border-radius: 7px;
 }
 h1 {
-    color: #000;
+    color: #fff;
     font-family: 'Concert One', cursive, sans-serif;
     font-weight: normal;
     margin-bottom: 40px;
+    text-align: center;
     /*text-shadow: 1px 1px 1px #888;*/
+}
+body div {
+    overflow:   hidden;
+}
+canvas {
+    position: absolute;
+    top:      0;
+    z-index:  1;
 }
 #article {
     border-radius: 7px;
     margin: 0 auto;
     min-height: 900px;
     padding: 20px;
+    position: relative;
     width: 960px;
     -ms-border-radius: 7px;
     _height: 900px;
+    z-index: 100;
 }
 
 #content {
-    /*background: transparent url(../images/content_background.png);*/
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#E7FFFFFF', EndColorStr='#E7FFFFFF');
 
-    background: rgba(255, 255, 255, 0.90);
+    background: #ddd;
     box-shadow: 0 0 10px 10px #fff;
     /*border-radius: 7px;*/
     margin: 0 auto;
@@ -108,8 +119,9 @@ h1 {
         height: auto;
     }
     #content .text {
-        width: 470px;
+        width:       470px;
         margin-left: 420px;
+        padding:     2px;
     }
 
     #content ul {
@@ -152,9 +164,9 @@ h1 {
 }
 
 .buttons {
-    bottom: 10px;
-    float: right;
-    text-align: center;
+    bottom:   10px;
+    position: absolute;
+    right:    10px;
 }
 .super {
     font-size: 75%;
