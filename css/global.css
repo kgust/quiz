@@ -114,9 +114,9 @@ canvas {
         background-image: url("../images/abby with book.png");
         /*height: 350px;*/
     }
-    .photo #number {
+    #number {
+        background: #fff;
         margin: auto;
-        height: auto;
     }
     #content .text {
         width:       470px;

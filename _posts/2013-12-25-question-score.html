@@ -5,13 +5,17 @@ permalink: /score
         <div id="score" class="page">
             <div class="photo" id="number"></div>
             <div class="text">
-                <h2>Your final score is <span id="answer">ANSWER</span> out of a possible 10 points!</h2>
-                <p>
-                    <span id="level">LEVEL</span>
-                    <span id="not_perfect">Why don't you go back through the quiz and see what questions you missed.</span>
+                <h2>Thanks for taking the {{site.name}}!</h2>
+                <h3>Your final score is <span id="answer">ANSWER</span> out of a possible 10 points!</h3>
+                <p id="not_perfect" style="display:none">
+                    Why don't you go back through the quiz and see what questions
+                    you missed.
                 </p>
 
-                <p style="font-weight: bold;">Now it's your turn.  We want to hear how you did on the quiz. Tell us your score and what you liked about it.</p>
+                <p style="font-weight: bold;">
+                    Now it's your turn.  We want to hear how you did on the quiz.
+                    Tell us your score and what you liked about it.
+                </p>
 
                 <p>We also invite you connect with us online.</p>
 
@@ -36,3 +40,32 @@ permalink: /score
             <p style="clear: both;" />
             </div>
         </div>
+        <script type="text/javascript">
+        (function() {
+          var keys = [1,2,3,4,1,2,3,4,1,2];
+          var answers = store.get('answers');
+          var correct = 0;
+
+          for (var index=0; index < 10; index++) {
+            if (answers[index] === keys[index]) {
+              correct++;
+            }
+          }
+
+          $('#answer').text(correct);
+
+          $img = $('<img/>', {
+            src: '/images/number-' + correct + '-' + getRandomInt(0,3) + '.png',
+            height: '375px',
+            width: '400px'
+          }).appendTo('#number');
+          console.log($img);
+
+         })();
+
+        // Returns a random integer between min and max
+        // Using Math.round() will give you a non-uniform distribution!
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        </script>
