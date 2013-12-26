@@ -61,9 +61,8 @@ layout: quiz
           count++;
         }
       });
-      console.debug(count);
       if (count === 10) {
-        $('.next').attr('href', '/score').removeClass('disabled');
+        $('.next').removeClass('disabled').attr('href', '/score');
       }
     }
     enableNext();

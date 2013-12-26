@@ -57,7 +57,7 @@
         document.addEventListener( 'touchstart', onDocumentTouchStart, false );
         document.addEventListener( 'touchmove', onDocumentTouchMove, false );
         
-        setInterval( loop, 1000 / 60 );
+        setInterval( loop, 2000 / 60 );
         
     }
 
