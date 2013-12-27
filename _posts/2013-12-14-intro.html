@@ -20,22 +20,33 @@ permalink: /
 
       <script src="/js/messi.min.js"></script>
       <script type="text/javascript">
-      var messi = new Messi(
-        'Would you like to restart or skip to where you left off?', {
-          title: 'You have an unfinished quiz',
-          buttons: [
-            {id: 0, label: 'Restart', val: true},
-            {id: 1, label: 'Continue', val: false}
-          ],
-          callback: function(val) { alert('Your selection: ' + val); }
-        }
-      );
 
       $('a.next').on('click', function() {
-        if (confirm('You have an unfinished quiz. Would you like to restart where you left off?')) {
-         window.location.href = '/question/4';
-         return false;
-        }
+        var messi = new Messi(
+            'Would you like to reset the quiz or continue where you left off?', {
+                title: 'You have an unfinished quiz',
+                buttons: [
+                    {id: 0, label: 'Reset', val: true},
+                    {id: 1, label: 'Continue', val: false}
+                ],
+                callback: function(val) {
+                    if (val) {
+                        store.remove('answers');       
+                        store.remove('completed');       
+                        window.location = '/question/1';
+                    } else {
+                        answers = store.get('answers');
+                        for (var index=0; index <= 9; index++) {
+                            if (typeof answers[index] === 'undefined' || answers[index] === null) {
+                                window.location = '/question/' + (index+1);
+                                return false
+                            }
+                        }
+                    }
+                }
+            }
+        );
+        return false;
       });
       </script>
 
