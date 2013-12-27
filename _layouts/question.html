@@ -46,12 +46,30 @@ layout: quiz
       $('form input:eq(' + (index-1) + ')').click();
     }
 
-    $('form :input').on('change', function(e) {
-      var answers = store.get('answers')||[]; 
-      var answer = parseInt($('form input:checked').val());
-      answers[{{page.number}}-1] = answer;
-      store.set('answers', answers);
-    });
+
+    var completed = store.get('completed');
+
+    if (completed) {
+
+      $('input[type="radio"]').prop('disabled', true);
+      var answers = store.get('answers'); 
+      var answer = answers[{{page.number|minus:1}}];
+      var key = answer_keys[{{page.number|minus:1}}];
+
+      if (answer !== key) {
+        $('input:eq(' + (key-1) + ')').parents('li').addClass('correct');
+      }
+
+    } else {
+
+      $('form :input').on('change', function(e) {
+        var answers = store.get('answers')||[]; 
+        var answer = parseInt($('form input:checked').val());
+        answers[{{page.number}}-1] = answer;
+        store.set('answers', answers);
+      });
+
+    }
 
   {% if page.number > 9 %}
     function enableNext() {

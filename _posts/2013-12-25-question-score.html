@@ -6,7 +6,7 @@ permalink: /score
             <div class="photo" id="number"></div>
             <div class="text">
                 <h2>Thanks for taking the {{site.name}}!</h2>
-                <h3>Your final score is <span id="answer">ANSWER</span> out of a possible 10 points!</h3>
+                <h3>Your final score is <span id="answer">??</span> out of a possible 10 points!</h3>
                 <p id="not_perfect" style="display:none">
                     Why don't you go back through the quiz and see what questions
                     you missed.
@@ -19,12 +19,6 @@ permalink: /score
 
                 <p>We also invite you connect with us online.</p>
 
-                <p id="kevin" class="socialmedia">Kevin's Social Media Connections:<br/>
-                    <a href='https://plus.google.com/s/kevin%20gustavson' target="_blank"><img src='/images/google-plus-icon.png' alt="Google+" title="Google+"></a>
-                    <a href='http://www.linkedin.com/in/kevingustavson' target="_blank"><img src='/images/Vector Social Media Icons/32px/linkedin.png' alt="LinkedIn" title="LinkedIn"></a>
-                    <a href='http://www.facebook.com/kdgustavson' target="_blank"><img src='/images/Vector Social Media Icons/32px/facebook.png' alt="Facebook" title="Facebook"></a>
-                </p>
-
                 <p id="rose" class="socialmedia">Rose's Social Media Connections:<br/>
                 <!--
                     <a href='RGADDR' target="_blank"><img src='/images/Vector Social Media Icons/32px/email.png' alt="Email" title="Email"></a>
@@ -32,6 +26,12 @@ permalink: /score
                     <a href='http://www.facebook.com/people/Rose-Egbert-Gustavson/1404969224' target="_blank"><img src='/images/Vector Social Media Icons/32px/facebook.png' alt="Facebook" title="Facebook"></a>
                     <a href='http://www.linkedin.com/in/rosegustavson' target="_blank"><img src='/images/Vector Social Media Icons/32px/linkedin.png' alt="LinkedIn" title="LinkedIn"></a>
                     <!--<a href='https://plus.google.com/s/rose%20gustavson' target="_blank"><img src='/images/google-plus-icon.png' alt="Google+" title="Google+"></a>-->
+                </p>
+
+                <p id="kevin" class="socialmedia">Kevin's Social Media Connections:<br/>
+                    <a href='https://plus.google.com/s/kevin%20gustavson' target="_blank"><img src='/images/google-plus-icon.png' alt="Google+" title="Google+"></a>
+                    <a href='http://www.linkedin.com/in/kevingustavson' target="_blank"><img src='/images/Vector Social Media Icons/32px/linkedin.png' alt="LinkedIn" title="LinkedIn"></a>
+                    <a href='http://www.facebook.com/kdgustavson' target="_blank"><img src='/images/Vector Social Media Icons/32px/facebook.png' alt="Facebook" title="Facebook"></a>
                 </p>
 
                 <p class="buttons">
@@ -42,12 +42,13 @@ permalink: /score
         </div>
         <script type="text/javascript">
         (function() {
-          var keys = [1,2,3,4,1,2,3,4,1,2];
+          store.set('completed', true);
+
           var answers = store.get('answers');
           var correct = 0;
 
           for (var index=0; index < 10; index++) {
-            if (answers[index] === keys[index]) {
+            if (answers[index] === answer_keys[index]) {
               correct++;
             }
           }
@@ -59,7 +60,6 @@ permalink: /score
             height: '375px',
             width: '400px'
           }).appendTo('#number');
-          console.log($img);
 
          })();
 
