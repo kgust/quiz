@@ -22,31 +22,66 @@ permalink: /
       <script type="text/javascript">
 
       $('a.next').on('click', function() {
-        var messi = new Messi(
-            'Would you like to reset the quiz or continue where you left off?', {
-                title: 'You have an unfinished quiz',
-                buttons: [
-                    {id: 0, label: 'Reset', val: true},
-                    {id: 1, label: 'Continue', val: false}
-                ],
-                callback: function(val) {
-                    if (val) {
-                        store.remove('answers');       
-                        store.remove('completed');       
-                        window.location = '/question/1';
-                    } else {
-                        answers = store.get('answers');
-                        for (var index=0; index <= 9; index++) {
-                            if (typeof answers[index] === 'undefined' || answers[index] === null) {
-                                window.location = '/question/' + (index+1);
+        answers = store.get('answers');
+        completed = store.get('completed');
+        if (!answers) {
+
+            window.location = '/question/1/';
+
+        } else if (completed) {
+
+             var messi = new Messi(
+                'Would you like to reset the quiz or see your score?', {
+                    title: 'You have an finished quiz',
+                    buttons: [
+                        {id: 0, label: 'Reset', val: true},
+                        {id: 1, label: 'Go to score', val: false}
+                    ],
+                    callback: function(val) {
+                        if (val) {
+                            store.remove('answers');
+                            store.remove('completed');
+                            window.location = '/question/1/';
+                        } else {
+                            window.location = '/score/';
+                        }
+                    }
+                }
+            );
+
+       } else {
+
+            var messi = new Messi(
+                'Would you like to reset the quiz or continue where you left off?', {
+                    title: 'You have an unfinished quiz',
+                    buttons: [
+                        {id: 0, label: 'Reset', val: true},
+                        {id: 1, label: 'Continue', val: false}
+                    ],
+                    callback: function(val) {
+                        if (val) {
+                            store.remove('answers');
+                            store.remove('completed');
+                            window.location = '/question/1/';
+                        } else {
+                            answers = store.get('answers');
+                            for (var index=0; index <= 10; index++) {
+                                if (typeof answers[index] === 'undefined' || answers[index] === null) {
+                                    window.location = '/question/' + (index+1) + '/';
+                                    return false
+                                }
+                                window.location = '/question/10/';
                                 return false
                             }
                         }
                     }
                 }
-            }
-        );
+            );
+
+        }
+
         return false;
+
       });
       </script>
 

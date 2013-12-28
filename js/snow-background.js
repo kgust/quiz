@@ -16,10 +16,10 @@
     var windowHalfX = window.innerWidth / 2;
     var windowHalfY = window.innerHeight / 2;
 
-    var particles = []; 
+    var particles = [];
     var particleImage = new Image();
     //THREE.ImageUtils.loadTexture( "/images/ParticleSmoke.png" );
-    particleImage.src = '/images/ParticleSmoke.png'; 
+    particleImage.src = '/images/ParticleSmoke.png';
 
 
     function init() {
@@ -31,13 +31,13 @@
 
         scene = new THREE.Scene();
         scene.add(camera);
-            
+
         renderer = new THREE.CanvasRenderer();
         renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         var material = new THREE.ParticleBasicMaterial({
             map: new THREE.Texture(particleImage)
         });
-            
+
         for (var i = 0; i < 500; i++) {
 
             particle = new Particle3D( material);
@@ -46,8 +46,8 @@
             particle.position.z = Math.random() * 2000 - 1000;
             particle.scale.x = particle.scale.y =  1;
             scene.add( particle );
-            
-            particles.push(particle); 
+
+            particles.push(particle);
         }
 
         container.appendChild( renderer.domElement );
@@ -56,9 +56,9 @@
         document.addEventListener( 'mousemove', onDocumentMouseMove, false );
         document.addEventListener( 'touchstart', onDocumentTouchStart, false );
         document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-        
+
         setInterval( loop, 2000 / 60 );
-        
+
     }
 
     function onDocumentMouseMove( event ) {
@@ -95,25 +95,25 @@
 
         for (var i = 0; i<particles.length; i++) {
 
-            var particle = particles[i]; 
-            particle.updatePhysics(); 
+            var particle = particles[i];
+            particle.updatePhysics();
 
             with(particle.position)
             {
-                if(y<-1000) y+=2000; 
-                if(x>1000) x-=2000; 
-                else if(x<-1000) x+=2000; 
-                if(z>1000) z-=2000; 
-                else if(z<-1000) z+=2000; 
-            }               
+                if(y<-1000) y+=2000;
+                if(x>1000) x-=2000;
+                else if(x<-1000) x+=2000;
+                if(z>1000) z-=2000;
+                else if(z<-1000) z+=2000;
+            }
         }
 
         camera.position.x += ( mouseX - camera.position.x ) * 0.05;
         camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
-        camera.lookAt(scene.position); 
+        camera.lookAt(scene.position);
 
         renderer.render( scene, camera );
 
-        
+
     }
 
