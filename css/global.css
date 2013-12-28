@@ -36,7 +36,7 @@ canvas {
     min-height: 900px;
     padding: 20px;
     position: relative;
-    width: 960px;
+    /*width: 960px;*/
     -ms-border-radius: 7px;
     _height: 900px;
     z-index: 100;
@@ -59,20 +59,17 @@ canvas {
         float: left;
     }
     .photo {
-        /*visibility: hidden;*/
-        /*border: 1px solid #ccc;*/
-        /*opacity: 1;*/
-
         background-color: transparent;
         background-position: center center;
         background-repeat: no-repeat;
         /*border-radius: 5px;*/
-        position: absolute;
+        /*-ms-border-radius: 5px;*/
+        display: inline-block;
+        /*position: absolute;*/
         top: 0;
         height: 375px;
         margin: 0 10px 0 0;
         width: 400px;
-        /*-ms-border-radius: 5px;*/
     }
     #photo0 {
         background-image: url("../images/gustavson family.png");
@@ -119,9 +116,10 @@ canvas {
         margin: auto;
     }
     #content .text {
-        width:       470px;
-        margin-left: 420px;
+        display: inline-block;
+        /*margin-left: 420px;*/
         padding:     2px;
+        width:       460px;
     }
 
     #content ul {
