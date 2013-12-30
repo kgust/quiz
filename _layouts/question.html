@@ -18,23 +18,24 @@ layout: quiz
             </label></li>
           {% endfor %}
         </ul>
-        <p class="buttons">
+      </div>
+      <p class="buttons">
           {% if page.number > 1 %}
-          <a class="prev" href="/question/{{page.number|minus:1}}">Go Back</a>
+            <a class="prev" href="/question/{{page.number|minus:1}}">Go Back</a>
           {% else %}
-          <a class="prev" href="/">Go Back</a>
+            <a class="prev" href="/">Go Back</a>
           {% endif %}
 
           {% if page.number < 10 %}
-          <a class="next" href="/question/{{page.number|plus:1}}">Next Question</a>
+            <a class="next" href="/question/{{page.number|plus:1}}">Next Question</a>
           {% else %}
-          <a class="next disabled">What's my score?</a>
+            <a class="next disabled">What's my score?</a>
           {% endif %}
-        </p>
-        <p>&nbsp;</p>
-      </div>
+      </p>
       <div class="photo" id="photo{{page.number}}"></div>
-      <p style="clear: both;"> </p> 
+      <div class="clear">
+        <p> </p>
+      </div>
     </div>
   </form>
 
