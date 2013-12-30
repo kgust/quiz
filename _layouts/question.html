@@ -86,6 +86,34 @@ layout: quiz
     }
     enableNext();
     $('form :input').on('change', enableNext);
+
+    /*
+    var messi = new Messi(
+      'Would you like to reset the quiz or continue where you left off?', {
+        title: 'You have an unfinished quiz',
+        width: "300px",
+        buttons: [
+            {id: 0, label: 'Reset', val: true},
+            {id: 1, label: 'Continue', val: false}
+        ],
+        callback: function(val) {
+            if (val) {
+                store.remove('answers');
+                store.remove('completed');
+                window.location = '/question/1/';
+            } else {
+                answers = store.get('answers');
+                for (var index=0; index <= 9; index++) {
+                    if (typeof answers[index] === 'undefined' || answers[index] === null) {
+                        window.location = '/question/' + (index+1) + '/';
+                        return false;
+                    }
+                    window.location = '/question/10/';
+                }
+            }
+        }
+      }
+    );
+    */
   {% endif %}
   </script>
-
