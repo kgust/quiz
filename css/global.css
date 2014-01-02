@@ -1,8 +1,21 @@
 body {
     font:       18px/1.4 'Amaranth', sans-serif;
     margin:     0;
-    background: #000000 url(/images/bg.jpg) repeat-x;
+    /*background: #000000 url(/images/bg.jpg) repeat-x;*/
     position:   relative;
+    background: url(/images/background.png) repeat 5% 5%;
+}
+#midground {
+    background: url(/images/midground.png) repeat 20% 20%;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+}
+#foreground {
+    background: url(/images/foreground.png) repeat 90% 110%;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
 }
 noscript div {
     background: transparent url(../images/content_background.png);
@@ -57,6 +70,7 @@ canvas {
     /*-ms-border-radius: 7px;*/
 }
     #content .photo, #content .text {
+        margin-right: 10px;
         float: left;
     }
     #content img {
@@ -161,7 +175,7 @@ canvas {
     text-decoration: none;
 }
 .disabled {
-    color: #ccc;
+    color: #666;
 }
 
 .buttons {

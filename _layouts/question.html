@@ -29,7 +29,7 @@ layout: quiz
           {% if page.number < 10 %}
             <a class="next" href="/question/{{page.number|plus:1}}">Next Question</a>
           {% else %}
-            <a class="next disabled">What's my score?</a>
+            <a class="next disabled" title="Disabled until all questions are answered.">What's my score?</a>
           {% endif %}
       </p>
       <div class="photo" id="photo{{page.number}}"></div>
@@ -81,7 +81,10 @@ layout: quiz
         }
       });
       if (count === 10) {
-        $('.next').removeClass('disabled').attr('href', '/score');
+        $('.next')
+            .removeAttr('title')
+            .removeClass('disabled')
+            .attr('href', '/score');
       }
     }
     enableNext();
