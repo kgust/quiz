@@ -36,12 +36,13 @@ h1 {
     /*text-shadow: 1px 1px 1px #888;*/
 }
 body div {
-    overflow:   hidden;
+    /*overflow:   hidden;*/
 }
 canvas {
-    position: absolute;
+    left:     0;
+    position: fixed;
     top:      0;
-    z-index:  1;
+    z-index:  0;
 }
 .clear {
     clear: both;
@@ -129,6 +130,9 @@ canvas {
     #photo10 {
         background-image: url("../images/abby with book.png");
         /*height: 350px;*/
+    }
+    #score .photo {
+        border-radius: 15px;
     }
     #number {
         background: #fff;
