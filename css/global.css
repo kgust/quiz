@@ -74,62 +74,37 @@ canvas {
         margin-right: 10px;
         float: left;
     }
+    /*
     #content img {
         display: inline-block;
         margin: 0 10px 0 0;
         float: left;
     }
+    */
     .photo {
         background-color: transparent;
         background-position: center center;
         background-repeat: no-repeat;
-        /*border-radius: 5px;*/
-        /*-ms-border-radius: 5px;*/
-        /*position: absolute;*/
+        border-radius: 10px;
         top: 0;
-        height: 375px;
+        height: 400px;
         margin: 0 10px 0 0;
         width: 400px;
     }
+        .photo img {
+            border-radius: 10px;
+            display:       block;
+            margin:        auto;
+        }
     #photo0 {
-        background-image: url("../images/gustavson family.png");
+        margin-top: 25px;
     }
-    #photo1 {
-        background-image: url("../images/grace at school.png");
-    }
-    #photo2 {
-        background-image: url("../images/cousins make models.png");
-    }
-    #photo3 {
-        background-image: url("../images/girls swimming.png");
-        /*height: 267px;*/
-    }
-    #photo4 {
-        background-image: url("../images/egberts at play.png");
-    }
-    #photo5 {
-        background-image: url("../images/abby on four-wheeler.png");
-        /*height: 341px;*/
-    }
-    #photo6 {
-        background-image: url("../images/Four Sisters.png");
-        /*height: 282px;*/
-    }
-    #photo7 {
-        background-image: url("../images/grace with camera.png");
-        /*height: 251px;*/
-    }
-    #photo8 {
-        background-image: url("../images/abby with gypsy.png");
-        /*height: 375px;*/
-    }
-    #photo9 {
-        background-image: url("../images/cmsi.gif");
-        /*height: 400px;*/
-    }
-    #photo10 {
-        background-image: url("../images/abby with book.png");
-        /*height: 350px;*/
+    #photo3,
+    #photo5,
+    #photo8,
+    #photo9
+    {
+        margin-top: 50px;
     }
     #score .photo {
         border-radius: 15px;
