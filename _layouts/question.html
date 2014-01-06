@@ -44,7 +44,8 @@ layout: quiz
 
     var index = answers[{{page.number|minus:1}}];
     if (index > 0) {
-      $('form input:eq(' + (index-1) + ')').click();
+      $input = $('form input:eq(' + (index-1) + ')').click();
+      $input.parents('label').css('fontWeight', 'bold');
     }
 
 
@@ -68,6 +69,8 @@ layout: quiz
         var answer = parseInt($('form input:checked').val());
         answers[{{page.number}}-1] = answer;
         store.set('answers', answers);
+        $('label').css('fontWeight', 'normal');
+        $(this).parent().css('fontWeight', 'bold');
       });
 
     }
