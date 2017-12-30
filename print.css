@@ -1,0 +1,25 @@
+html {
+	background: none;
+}
+#container {
+	font-family: times;
+	font-size: 12pt;
+	margin: 0 auto;
+	padding: 0;
+	width: auto;
+}
+#christmas_star {
+li {
+	page-break-inside: avoid;
+}
+#christmas_star, #footer, #score_me {
+	display: none;
+}
+#answer_key {
+	display: block;
+	margin-top: 10px;
+}
+#answer_key p {
+	margin: 0;
+	/*text-gravity: inverse;*/
+}

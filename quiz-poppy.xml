@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<quiz>
+  <type>Christmas</type>
+  <year>2009</year>
+  <intro>&lt;p&gt;Can you believe it's the 20th annual Gustavson Post-Christmas Quiz!&lt;/p&gt;&lt;p&gt;We welcome all Quiz newcomers to our traditional holiday challenge. Longtime recipients love to test their wit and wisdom every year.&lt;/p&gt;&lt;p&gt;Go for it, then brag about your final score with us! If you get more than three answers correct, then perhaps you are &lt;i&gt;smarter than a fifth grader&lt;/i&gt;!&lt;/p&gt;</intro>
+  <questions>
+    <question>
+      <title>What are some of the adventures Grace has experienced since turning three years old in July?</title>
+      <option>She got her first official haircut in October, and we donated her beautiful, long strands to Locks of Love.</option>
+      <option>While getting out of the van one afternoon Rose said, "I love you, Grace" to which Grace replied, "Belly button!"</option>
+      <option>She loves to run around the house in costumes, to jump on our family trampoline (i.e. living room chair), and take bubble baths!</option>
+      <option>Her speech delay gives the impression that she is quiet, except when our family was lighting the Advent candles at church on a recent Sunday morning and Grace said loudly, "Blow out the candles!"</option>
+      <option answer="true">All of the above.</option>
+    </question>
+    <question>
+      <title>Which group did Abigail join in September and discovered a new passion for performing?</title>
+      <option answer="true">The Fox Valley Children's Chorus</option>
+      <option>The Mormon Tabernacle Choir</option>
+      <option>The New York City Rockettes</option>
+      <option>The Harlem Globetrotters</option>
+    </question>
+    <question>
+      <title>What were some memorable trips for Abigail in 2009?</title>
+      <option>She, Rose, and their friends attended a mother-daughter &lt;i&gt;Pure in Heart&lt;/i&gt; Conference in Bettendorf, Iowa in April.</option>
+      <option>She was excited to attend Paul and Virginia Egbert's wedding (on Rose's side) in Tennessee in late May.</option>
+      <option>She celebrated her eight birthday on December 21 at the American Girl Place in Chicago with Rose, Grandma Misty, and Grandpa Poppy by enjoying a tea party and spending birthday money on a doll and accessories.</option>
+      <option answer="true">All of the above.</option>
+    </question>
+    <question>
+      <title>Election Day is Tuesday, February 2, and Rose is part of the campaign team to elect which Republican primary candidate to Congress in the 14th District of Illinois?</title>
+      <option answer="true">State Senator Randy Hultgren (&lt;a href="http://www.HultgrenForCongress.com/"&gt;www.HultgrenForCongress.com&lt;/a&gt;)</option>;
+      <option>Former Alaska Governor Sarah Palin</option>
+      <option>Tiger Woods</option>
+      <option>Political Satirist Stephen Colbert</option>
+    </question>
+    <question>
+      <title>Which member of the Gustavson family sings the &lt;em&gt;Awana Cubbies Theme Song&lt;/em&gt; the best on Sunday nights at church?</title>
+      <option>Sparks Leader Kevin</option>
+      <option answer="true">Cute Little Cubbie Grace</option>
+      <option>Commander Rose</option>
+      <option>Sparks Member Abby</option>
+    </question>
+    <question>
+      <title>Hailey, our 16-year-old niece and cousin from North Dakota returned for seven weeks of non-stop fun during the summer. What were the highlights?</title>
+      <option>Experiencing her first airplane ride from Minneapolis to Chicago!</option>
+      <option>Reuniting with her buddies from Christ the King Church, and helping with Neighborhood Bible Club!</option>
+      <option>Eating a foot-long chili hotdog at Sonic, and taking a train ride to Chicago to visit Millenium Park!</option>
+      <option>Stopping at the Laura Ingalls Wilder birthplace in Pepin, Wisconsin on the drive back home in August!</option>
+      <option answer="true">All of the above.</option>
+    </question>
+    <question>
+      <title>Where did the four of us eat our Thanksgiving dinner?</title>
+      <option>In our dining room with turkey and all the trimmings.</option>
+      <option answer="true">At the Burger King in Fergus Falls, Minnesota.</option>
+      <option>At a Chinese restaurant in Chicago after our neighbor's dogs ate the turkey.</option>
+      <option>At the White House. We pretended we were on the guest list and slipped past security.</option>
+    </question>
+    <question>
+      <title>What DIDN'T make us sad this past year?</title>
+      <option>Kevin's beloved Grandma Esther Rasmusson died at age 86 on Nov. 24 so we drove to North Dakota for the funeral. We have many fond memories of her, and we have the assurance that she's in Heaven with her Lord and Savior, Jesus Christ.</option>
+      <option answer="true">The snowy, wintery weather allows us to go sledding and drink hot chocolate with marshmallows!</option>
+      <option>At the end of September, Kevin was released from his job after the company decided to go in a different direction. He welcomes all job leads.</option>
+    </question>
+    <question>
+      <title>This past year, Abigail was NOT enamored with which of the following?</title>
+      <option>Laura Ingalls Wilder (She and Kevin have read through the original book series, Abby dressed up as a pioneer girl for Halloween, and she and Rose cook with pioneer recipes.)</option>
+      <option>Miss Stutzman, her wonderful second grade teacher at J.B. Nelson Elementary School in Batavia.</option>
+      <option answer="true">The Chicago Cubs (Uncle Brian has influenced her to be a Milwaukee Brewers fan.)</option>
+      <option>Episodes of Charlie Brown, old musical movies, and Little House on the Prairie.</option>
+    </question>
+    <question>
+      <title>How many digital photos did Grace capture during the Christmas 2009 celebration at Misty and Poppy's house in Wheaton?</title>
+      <option>None</option>
+      <option>14</option>
+      <option>56</option>
+      <option answer="true">108 (Shots included Poppy's leg, parts of furniture, Abby's arm, an extreme closeup of Kevin's face, blurry unidentified objects, etc. Then she dropped the camera, damaged the lens, and the game ended.)</option>
+    </question>
+  </questions>
+</quiz>

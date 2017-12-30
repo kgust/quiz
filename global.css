@@ -1,0 +1,172 @@
+.answer {
+	list-style-type: lower-latin;
+}
+li {
+	position: relative;
+	margin: 0.25em;
+}
+li input {
+	position: absolute;
+	left: -45px;
+}
+#christmas_star {
+	position: absolute;
+	top: -120px;
+	right: 30px;
+	/*width: 75px;*/
+	/*height: 300px;*/
+}
+#mile_sign {
+	position: absolute;
+	bottom: -60px;
+	right: -90px;
+	z-index: 100;
+}
+#title {
+	position: absolute;
+	color: #FFF;
+	top: -110px;
+	left: 0;
+	font-size: 250%;
+}
+#footer {
+	height: 99px;
+	width: 100%;
+	background: transparent url(hills.gif);
+	position: relative;
+	left: 0;
+	bottom: 0;
+}
+#footer a {
+	color: #333;
+	font-weight: bold;
+	text-decoration: none;
+	position: absolute;
+	left: 10px;
+	bottom: 5px;
+}
+
+html {
+	background: #000065 url(starfield.png) repeat bottom left;
+	font-family: arial;
+	width: 100%;
+}
+body {
+	font-size: 14px;
+	line-height: 1.2;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	/*overflow: scroll;*/
+}
+#container {
+	width: 700px;
+	text-align: left;
+	margin: 120px auto 10px;
+	background: #ffe;
+	padding: 20px 40px;
+	position: relative;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+#top {
+	margin: 10px;
+	min-height: 300px;
+	_height: 300px;
+}
+h1 {
+	padding-top: 15px;
+	font-size: 195%;
+	text-align: center;
+}
+ol {
+	padding-left: 15px;
+	margin-left: 15px;
+}
+li ol {
+	position: relative;
+	padding-bottom: 15px;
+	list-style-type: lower-alpha;
+	page-break-inside: avoid;
+}
+.question {
+	padding-top: 0.75em;
+	font-weight: bold;
+}
+.answer {
+	margin: .25em;
+	font-weight: normal;
+}
+#questions {
+	text-align: left;
+	width: 100%;
+}
+	#questions p {
+		margin: 0 30px;
+	}
+#answer_key, #score {
+	display: none;
+}
+#score p {
+	margin: 3px;
+}
+.green {
+	color: green;
+	font-weight: bold;
+}
+.red {
+	color: red;
+	font-weight: bold;
+}
+
+.alpha-shadow {
+	float: left;
+	background: transparent url(shadow1.gif) no-repeat bottom right;
+	margin: 0 10px;
+}
+
+.alpha-shadow div {
+	background: transparent url(shadow2.png) no-repeat left top !important;
+	background: url(img/shadow2.gif);
+	no-repeat left top;
+	padding: 0 5px 0 0;
+}
+
+.alpha-shadow img {
+	background-color: #fff;
+	border: 1px solid #a9a9a9;
+
+	padding: 4px;
+}
+
+
+@media print {
+	html {
+		background: none;
+	}
+	h1 {
+		display: none;
+	}
+	#container {
+		font-family: times;
+		font-size: 12pt;
+		margin: 0 auto;
+		padding: 0;
+		width: auto;
+	}
+	#christmas_star {
+	li {
+		page-break-inside: avoid;
+	}
+	#christmas_star, #mile_sign, #footer, #score_me {
+		display: none;
+	}
+	#answer_key {
+		display: block;
+		margin-top: 10px;
+	}
+	#answer_key p {
+		margin: 0;
+	}
+}

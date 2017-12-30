@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300"
+   height="400"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47pre4 r22446"
+   sodipodi:docname="Christmas Star.svg">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2923"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2997"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3937"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3953"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.695"
+     inkscape:cx="150"
+     inkscape:cy="200"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="738"
+     inkscape:window-height="931"
+     inkscape:window-x="1"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-652.36218)">
+    <image
+       id="image2999"
+       xlink:href="file:///home/kevin/Pictures/Christmas_Star_Cropped.png"
+       width="30"
+       y="0"
+       x="0"
+       height="108" />
+    <path
+       style="fill:#ff0000;fill-opacity:0;opacity:1"
+       d="m 0,851.18224 0,-187.73121 149.48967,0 149.48966,0 0,187.73121 0,187.73116 -149.48966,0 -149.48967,0 0,-187.73116 z"
+       id="path4003" />
+    <path
+       style="fill:#ffffff;fill-opacity:1"
+       d="m 152.96617,954.17368 c 0,-37.0465 0.97569,-72.23569 2.16819,-78.1982 l 2.16819,-10.84094 24.77471,21.70501 c 13.62609,11.93776 25.29619,22.87833 25.93355,24.31239 0.63736,1.43406 2.68237,2.60738 4.54447,2.60738 1.86209,0 -7.53103,-12.90652 -20.87361,-28.68116 l -24.25924,-28.68116 21.45302,-2.20103 c 11.79917,-1.21056 38.66172,-2.59291 59.69457,-3.07188 32.73784,-0.74552 35.73986,-1.26051 20.85903,-3.57829 -9.56039,-1.48909 -36.54675,-2.84449 -59.9697,-3.012 -23.42294,-0.16751 -42.58717,-1.2685 -42.58717,-2.44665 0,-1.17815 9.03105,-12.52024 20.069,-25.20465 36.66214,-42.13082 36.29462,-42.055 -18.37289,3.79011 l -11.29258,9.47016 -2.15477,-10.77385 c -1.18512,-5.92562 -2.15477,-40.3024 -2.15477,-76.39286 0,-41.42834 -1.28162,-65.61901 -3.4765,-65.61901 -2.19488,0 -3.4765,24.19067 -3.4765,65.61901 0,36.09046 -0.96965,70.46724 -2.15477,76.39286 l -2.15477,10.77385 -11.29259,-9.47016 c -53.928847,-45.22566 -53.617279,-45.16015 -18.00917,-3.78635 15.84443,18.40996 18.727,23.49798 14.2795,25.20465 -3.06482,1.17608 -23.82647,2.22848 -46.136986,2.33868 -22.310525,0.11019 -46.822296,1.49471 -54.470605,3.07671 -12.04378,2.49117 -9.948765,2.97919 15.644268,3.64427 16.252655,0.42235 43.388,1.77558 60.300763,3.00717 l 30.75048,2.23926 -24.84912,28.68116 c -13.66702,15.77464 -23.59367,28.61305 -22.059221,28.5298 1.534445,-0.0832 14.523101,-10.96069 28.863681,-24.1721 24.13097,-22.23091 26.24224,-23.45008 28.33462,-16.36204 1.24346,4.21229 2.41678,39.33835 2.60738,78.05791 0.21848,44.38411 1.63123,70.39917 3.82304,70.39917 2.19805,0 3.4765,-24.77005 3.4765,-67.35722 z"
+       id="path3943" />
+  </g>
+</svg>
