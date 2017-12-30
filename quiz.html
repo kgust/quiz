@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Christmas Quiz 2008</title>
+	<style type='text/css'>
+		html {
+			background: green url(christmas_star.png) repeat center;
+			font-family: arial;
+		}
+		body {
+			font-size: 14px;
+			line-height: 1.2;
+			width: 690px;
+			margin: 40px auto;
+			background: white;
+			padding: 40px;
+			text-align: center;
+		}
+		h1 {
+			padding-top: 15px;
+			font-size: 195%;
+		}
+		h2 {
+			text-align: left;
+		}
+		p {
+			text-align: left;
+			/*margin: 0; */
+		}
+		ol {
+			padding-left: 15px;
+			margin-left: 15px;
+		}
+		li ol {
+			position: relative;
+			padding-bottom: 15px;
+			list-style-type: lower-alpha;
+			page-break-inside: avoid;
+		}
+		li ol input {
+			position: absolute;
+			left: -30px;
+		}
+		li {
+			margin: .25em;
+		}
+		#questions {
+			text-align: left;
+			width: 100%;
+		}
+			#questions p {
+				margin: 0 30px;
+			}
+		#answer_key, #score {
+			display: none;
+		}
+		#score p {
+			margin: 3px;
+		}
+		.green {
+			color: green;
+			font-weight: bold;
+		}
+		.red {
+			color: red;
+			font-weight: bold;
+		}
+
+		.alpha-shadow {
+		  float: left;
+		  background: transparent url(shadow1.gif) no-repeat bottom right;
+		  margin: 10px 10px 0 10px !important;
+		  margin: 10px 0 0 5px;
+		}
+
+		.alpha-shadow div {
+		  background: transparent url(shadow2.png) no-repeat left top !important;
+		  background: url(img/shadow2.gif);
+		  no-repeat left top;
+		  padding: 0 5px 0 0;
+		}
+
+		.alpha-shadow img {
+		  background-color: #fff;
+		  border: 1px solid #a9a9a9;
+
+		  padding: 4px;
+		}
+
+	</style>
+	<style type='text/css' media='print'>
+		html {
+			background: none;
+		}
+		body {
+			font-family: times;
+			font-size: 12pt;
+			margin: 0 auto;
+			padding: 0;
+			width: auto;
+		}
+		li {
+			page-break-inside: avoid;
+		}
+		#score_me {
+			display: none;
+		}
+		#answer_key {
+			display: block;
+			margin-top: 10px;
+		}
+		#answer_key p {
+			margin: 0;
+		}
+	</style>
+	<script type='text/javascript' src='http://jqueryjs.googlecode.com/files/jquery-1.2.6.js'> </script>
+	<script type='text/javascript'>
+		function show_answers() {
+			num_correct = countCorrect();
+
+			$("input:checked, input.correct").parent().css('font-weight','bold');
+			$("input:checked").parent().css('color','red');
+			$("input.correct").parent().css('color','green');
+			$("input.correct + a").css('color','green');
+			$('#score_me').hide();
+			$('#number').html(num_correct);
+			$('#result').html(get_result(num_correct));
+			$('#score').show();
+		}
+		function countCorrect() {
+			var n = $('input.correct:checked').length;
+			if (n == 0) {
+				return 'ZERO';
+			} else {
+				return n;
+			}h
+		}
+		function get_result(n) {
+			switch(n) {
+				case 'ZERO': 
+					return 'No points! Are you sure you clicked on the answers correctly?'
+					break;
+				case 1:
+				case 2:
+				case 3:
+					return "That's downright awful";
+					break;
+				case 4:
+				case 5:
+					return "Hmm, not very good";
+					break;
+				case 6:
+				case 7:
+				case 8:
+					return "That's pretty good";
+					break;
+				case 9:
+					return "Excellent! You scored very high.";
+					break;
+				case 10:
+					return "Perfect! You know us very well.";
+					break;
+				default:
+					return "I was unable to determine your score."
+			}
+		}
+	</script>
+</head>
+<body>
+
+<div class='alpha-shadow'>
+	<div>
+		<img src='family_portrait.jpg' alt='Gustavson Family Portrait' title='Gustavson Family Portrait' />
+	</div>
+</div>
+<h1>Gustavson Post-Christmas Quiz 2008</h1>
+
+<p>This is the 19th annual Gustavson Post-Christmas Quiz!  We welcome all quiz newcomers to our traditional holiday greeting.  The longtime recipients love to test their wit and wisdom every year (except last year when creating the Quiz never made it to the top of our ‘things to do’ list).  You can tally your answers to the multiple-choice questions at the end.  On your mark, get set, go!</p>
+
+<br style='clear: both;' />
+
+<div id='questions'>
+<ol>
+	<li>Why have we been especially praising the Lord in recent years?
+		<ol id='q1'>
+			<li><input name='q1' type='radio'> Kevin accepted a new full-time position in June 2007 as a senior web developer at Signature Tech Studios, a small business in Geneva – 10 minutes from our house.</li>
+			<li><input name='q1' type='radio'> After Thanksgiving 2007, we felt His protection and provisions following our high-speed slide into the ditch on icy I-94 west of Fargo, ND on the way home from the Gustavson family farm.  We suffered no injuries, and the van sustained minor damage from the accident.  We enjoyed a three-day visit with our friend and Fargo resident, Teresa Nygard, who showed tremendous hospitality to us while our vehicle was being repaired.</li>
+			<li><input name='q1' type='radio'> Rose is nearly recuperated from surgery on Nov. 18, 2008 to remove a benign tumor from her left pelvic bone.  Our church family, relatives, and friends sustained us for six weeks with childcare, meals, school rides for Abby, house cleaning, and washing laundry.</li>
+			<li><input name='q1' class='correct' type='radio'> All of the above</li>
+		</ol>
+	</li>
+
+	<li>What was NOT particularly memorable about our summer in 2008?
+		<ol id='q2'>
+			<li><input name='q2' type='radio'> We hosted our 15-year-old niece, Hailey Gustavson, from Des Lacs, ND for 11 weeks of non-stop fun and adventures!</li>
+			<li><input name='q2' type='radio'> Rose's parents (George and Norlynn Egbert) celebrated 50 years of marriage, and an Egbert Family Reunion was held in the Wheaton area in June.</li>
+			<li><input name='q2' class='correct' type='radio'> Kevin took the garbage to the curb every Wednesday night.</li>
+			<li><input name='q2' type='radio'> We watched the Olympics and hope they come to Chicago in 2016.</li>
+		</ol>
+	</li>
+
+	<li>What were some highlights from Abigail's year?
+		<ol id='q3'>
+			<li><input name='q3' type='radio'> She loves school and made a smooth transition from half-day kindergarten to full-day first grade.</li>
+			<li><input name='q3' type='radio'> She learned to ride a two-wheeler bike, completed swim lessons, and played soccer.</li>
+			<li><input name='q3' type='radio'> She finished the Batavia library's summer reading club in record time.</li>
+			<li><input name='q3' type='radio'> She turned seven on Dec. 21st.</li>
+			<li><input name='q3' class='correct' type='radio'> All of the above.</li>
+		</ol>
+	</li>
+
+	<li>Two-year-old Grace loves everything related to Dora the Explorer and Elmo.
+		<ol id='q4'>
+			<li><input name='q4' class='correct' type='radio'> True</li>
+			<li><input name='q4' type='radio'> False</li>
+			<li><input name='q4' type='radio'> I don't know</li>
+		</ol>
+	</li>
+
+	<li>Where will you find us on most Sunday nights during the school year?
+		<ol id='q5'>
+			<li><input name='q5' type='radio'> Training for a marathon race.</li>
+			<li><input name='q5' class='correct' type='radio'> Being involved with the Awana clubs ministry at Christ the King Church - Rose as Commander, Kevin as a Leader, Abby as a Sparks member, and Grace as a future Cubbie.</li>
+			<li><input name='q5' type='radio'> Playing darts at John's Tavern.</li>
+			<li><input name='q5' type='radio'> Watching reality television.</li>
+		</ol>
+	</li>
+
+	<li>Which wedding anniversary did Kevin and Rose celebrate on August 15th?
+		<ol id='q6'>
+			<li><input name='q6' type='radio'> First</li>
+			<li><input name='q6' type='radio'> Fifth</li>
+			<li><input name='q6' class='correct' type='radio'> Tenth</li>
+			<li><input name='q6' type='radio'> Fiftieth</li>
+		</ol>
+	</li>
+
+	<li>Which option below is NOT true about Rose?
+		<ol id='q7'>
+			<li><input name='q7' type='radio'> She loves being a Mommy to Abby and Grace!</li>
+			<li><input name='q7' type='radio'> She uses her professional skills to consult for Western DuPage Special Recreation Association (WDSRA) and state senator Randy Hultgren.</li>
+			<li><input name='q7' class='correct' type='radio'> She was wiretapped trying to buy the U.S. Senate seat for Abby’s birthday, but Gov. Blagojevich did not respond to our nominal bid. :-)</li>
+			<li><input name='q7' type='radio'> She is a volunteer room parent for Abby's first grade class and also is a coordinator for the Moms In Touch prayer group.</li>
+		</ol>
+	</li>
+
+	<li>In what ways is the Gustavson family growing in faith at Christ the King Church?
+		<ol id='q8'>
+			<li><input name='q8' type='radio'> Kevin manages the Sound Team on Sunday mornings and Rose is a teacher in King's Court.</li>
+			<li><input name='q8' type='radio'> We continue to participate in the monthly Hymn Sing events at a local retirement community.</li>
+			<li><input name='q8' type='radio'> Abby is growing in her knowledge and understanding of the Bible, and Grace has graduated from the Nursery into Children's Church.</li>
+			<li><input name='q8' class='correct' type='radio'> All of the Above</li>
+		</ol>
+	</li>
+
+	<li>What DON'T we like to do best as a family?
+		<ol id='q9'>
+			<li><input name='q9' type='radio'> Go to local playgrounds in warm weather.</li>
+			<li><input name='q9' class='correct' type='radio'> Smoke cigars and drink Tequila.</li>
+			<li><input name='q9' type='radio'> Read books and watch family-friendly movies.</li>
+			<li><input name='q9' type='radio'> Attend Fellowship Around the Fire events with our church family.</li>
+		</ol>
+	</li>
+
+
+	<li>In 2008, what became Kevin's new all-time favorite movie?
+		<ol id='q10'>
+			<li><input name='q10' class='correct' type='radio'> <a href='http://www.fireproofthemovie.com/' title='Go to Fireproof'>Fireproof</a></li>
+			<li><input name='q10' type='radio'> Napoleon Dynamite</li>
+			<li><input name='q10' type='radio'> The Lord of the Rings Trilogy</li>
+			<li><input name='q10' type='radio'> High School Musical</li>
+		</ol>
+	</li>
+
+</ol>
+
+</div>
+
+<div id='score_me'>
+	<p>Take your best guess and push the button.</p>
+	<p><input type='button' value=" I'm ready!  What's my score? " onclick='javascript:show_answers()'></input></p>
+</div>
+
+<div id='score'>
+	<p><span id='result'>No result yet!  Be patient.</span>
+	(Your score is: <span id='number'>###</span> points out of a possible 10 points.)</p>
+	<p>Correct answers are <span class='green'>green</span>. Incorrect answers are <span class='red'>red</span>.</p>
+</div>
+
+<div id='answer_key'>
+	<p>Answer Key: (don't peek until you've filled in the questions)</p>
+	<p>1:d 2:c 3:e 4:a 5:b 6:c 7:c 8:d 9:b 10:a</p>
+	<p>9 - 10: Excellent!   6 - 8: Pretty  good   4 - 5: Not very good  1 - 3: Down right awful</p>
+</div>
+
+
+</body>
+</html>
