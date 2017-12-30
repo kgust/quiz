@@ -1,0 +1,104 @@
+---
+layout: quiz
+question: intro
+permalink: /
+image: our-family.jpg
+---
+
+<div id="intro" class="page">
+    <div class="photo"><img id="photo0" src="/images/2013/{{page.image}}" /></div>
+    <div class="text">
+        <p>
+          Since the holidays have recently passed, it's time to take the
+          23<span class="super">rd</span> annual {{ site.title }}!
+        </p>
+        <p>
+          We welcome people of all ages to test their wit and wisdom.  Newcomers
+          and long-time recipients will have fun completing the 10 multiple-choice
+          questions.
+        </p>
+        <p>
+        The {{ site.title }} will include a few questions
+          from 2012 since that edition never made it to the final production
+          phase.
+        </p>
+        <p>Do your best, then let us know how you scored!</p>
+    </div>
+    <div class="clear">
+        <p> </p>
+    </div>
+    <p class="buttons">
+        <a class="next" href="/question/1">Start the Quiz</a>
+    </p>
+</div>
+
+<script src="/js/messi.min.js"></script>
+<script type="text/javascript">
+
+$('a.next').on('click', function(ev) {
+  ev.preventDefault();
+  answers = store.get('answers');
+  completed = store.get('completed');
+  if (!answers) {
+
+      window.location = '/question/1/';
+
+  } else if (completed) {
+
+       var messi = new Messi(
+          'Would you like to reset the quiz or see your score?', {
+              title: 'You have an finished quiz',
+              width: "300px",
+              buttons: [
+                  {id: 0, label: 'Reset', val: true},
+                  {id: 1, label: 'Go to score', val: false}
+              ],
+              viewport: { top: 0, left: 0 },
+              callback: function(val) {
+                  if (val) {
+                      store.remove('answers');
+                      store.remove('completed');
+                      window.location = '/question/1/';
+                  } else {
+                      window.location = '/score/';
+                  }
+              }
+          }
+      );
+
+ } else {
+
+      var messi = new Messi(
+            'Would you like to reset the quiz or continue where you left off?', {
+              title: 'You have an unfinished quiz',
+              width: "300px",
+              buttons: [
+                  {id: 0, label: 'Reset', val: true},
+                  {id: 1, label: 'Continue', val: false}
+              ],
+              callback: function(val) {
+                  if (val) {
+                      store.remove('answers');
+                      store.remove('completed');
+                      window.location = '/question/1/';
+                  } else {
+                      answers = store.get('answers');
+                      for (var index=0; index <= 9; index++) {
+                          if (typeof answers[index] === 'undefined' || answers[index] === null) {
+                              window.location = '/question/' + (index+1) + '/';
+                              return false;
+                          }
+                          window.location = '/question/10/';
+                      }
+                  }
+              }
+          }
+      );
+
+  }
+
+  return false;
+
+});
+</script>
+

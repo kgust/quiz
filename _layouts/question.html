@@ -1,0 +1,125 @@
+---
+layout: quiz
+---
+  {% if page.number < 10 %}
+  <form method="get" action="/question/{{page.number|plus:1}}/">
+  {% else %}
+  <form method="get" action="/score/">
+  {% endif %}
+    <div id="q1" class="page">
+      <div class="text">
+        <h2>Question {{page.number}}</h2>
+        <h3>{{page.question}}</h3>
+        <ul>
+          {% for answer in page.answer %}
+            <li><label>
+              <input type="radio" name="q{{page.number}}" value="{{forloop.index}}" />
+              {{ answer }}
+            </label></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <p class="buttons">
+          {% if page.number > 1 %}
+            <a class="prev" href="/question/{{page.number|minus:1}}">Go Back</a>
+          {% else %}
+            <a class="prev" href="/">Go Back</a>
+          {% endif %}
+
+          {% if page.number < 10 %}
+            <a class="next" href="/question/{{page.number|plus:1}}">Next Question</a>
+          {% else %}
+            <a class="next disabled" title="Disabled until all questions are answered.">What's my score?</a>
+          {% endif %}
+      </p>
+      <div class="photo"><img id="photo{{page.number}}" src="/images/2013/{{page.image}}" /></div>
+      <div class="clear">
+        <p> </p>
+      </div>
+    </div>
+  </form>
+
+  <script type="text/javascript">
+    var answers = store.get('answers') || [];
+
+    var index = answers[{{page.number|minus:1}}];
+    if (index > 0) {
+      $input = $('form input:eq(' + (index-1) + ')').click();
+      $input.parents('label').css('fontWeight', 'bold');
+    }
+
+
+    var completed = store.get('completed');
+
+    if (completed) {
+
+      $('input[type="radio"]').prop('disabled', true);
+      var answers = store.get('answers'); 
+      var answer = answers[{{page.number|minus:1}}];
+      var key = answer_keys[{{page.number|minus:1}}];
+
+      if (answer !== key) {
+        $('input:eq(' + (key-1) + ')').parents('li').addClass('correct');
+      }
+
+    } else {
+
+      $('form :input').on('change', function(e) {
+        var answers = store.get('answers')||[]; 
+        var answer = parseInt($('form input:checked').val());
+        answers[{{page.number}}-1] = answer;
+        store.set('answers', answers);
+        $('label').css('fontWeight', 'normal');
+        $(this).parent().css('fontWeight', 'bold');
+      });
+
+    }
+
+  {% if page.number > 9 %}
+    function enableNext() {
+      var count = 0;
+      $.each(store.get('answers'), function(index, answer) {
+        if (answer > 0) {
+          count++;
+        }
+      });
+      if (count === 10) {
+        $('.next')
+            .removeAttr('title')
+            .removeClass('disabled')
+            .attr('href', '/score');
+      }
+    }
+    enableNext();
+    $('form :input').on('change', enableNext);
+
+    /*
+    var messi = new Messi(
+      'Would you like to reset the quiz or continue where you left off?', {
+        title: 'You have an unfinished quiz',
+        width: "300px",
+        buttons: [
+            {id: 0, label: 'Reset', val: true},
+            {id: 1, label: 'Continue', val: false}
+        ],
+        callback: function(val) {
+            if (val) {
+                store.remove('answers');
+                store.remove('completed');
+                window.location = '/question/1/';
+            } else {
+                answers = store.get('answers');
+                for (var index=0; index <= 9; index++) {
+                    if (typeof answers[index] === 'undefined' || answers[index] === null) {
+                        window.location = '/question/' + (index+1) + '/';
+                        return false;
+                    }
+                    window.location = '/question/10/';
+                }
+            }
+        }
+      }
+    );
+    */
+  {% endif %}
+  </script>
