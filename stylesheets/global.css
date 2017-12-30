@@ -1,0 +1,191 @@
+html {
+}
+body {
+	font: 16px/1.4 arial;
+	/*background: #ccc;*/
+	background: #CC0000 url(../images/christmas-ornaments-lights-balls.jpg) top center no-repeat;
+}
+noscript div {
+	background: transparent url(../images/content_background.png);
+	border-radius: 5px;
+	color: #c00;
+	font: 18px/1.4 arial bold;
+	margin: 0 auto;
+	text-align: center;
+	width: 570px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+h1 {
+	color: #fff;
+}
+#article {
+	border-radius: 5px;
+	margin: 0 auto;
+	min-height: 900px;
+	padding: 20px;
+	width: 960px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	_height: 900px;
+}
+
+#content {
+	background: transparent url(../images/content_background.png);
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 20px;
+	width: 880px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+	#content img {
+		display: inline-block;
+		margin: 0 10px 0 0;
+		float: left;
+	}
+	.photo {
+		background-color: transparent;
+		background-position: center center;
+		border-radius: 5px;
+		float: left;
+		height: 284px;
+		margin: 0 10px 0 0;
+		width: 376px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		-webkit-border-radius: 5px;
+	}
+	#photo0 {
+		background-image: url(../images/IMG_2330.JPG);
+		height: 480px;
+		margin-left: 8px;
+		width: 360px;
+	}
+	#photo1 {
+		background-image: url(../images/img_1750.jpg);
+		height: 480px;
+		margin-left: 28px;
+		width: 320px;
+	}
+	#photo2 {
+		background-image: url(../images/IMG_2194.JPG);
+		height: 360px;
+		margin-left: 8px;
+		width: 360px;
+	}
+	#photo3 {
+		background-image: url(../images/IMG_1712.JPG);
+		height: 267px;
+	}
+	#photo4 {
+		background-image: url(../images/IMG_1378.JPG);
+		height: 371px;
+	}
+	#photo5 {
+		background-image: url(../images/img_0640.jpg);
+		height: 341px;
+	}
+	#photo6 {
+		background-image: url(../images/IMG_1326.JPG);
+		height: 282px;
+	}
+	#photo7 {
+		background-image: url(../images/IMG_2214.JPG);
+		height: 251px;
+	}
+	#photo8 {
+		background-image: url(../images/img_4358.jpg);
+		margin-left: 67px;
+		height: 375px;
+		width: 250px;
+	}
+	#photo9 {
+		background-image: url(../images/IMG_1165.JPG);
+		height: 400px;
+		margin-left: 8px;
+		width: 360px;
+	}
+	#photo10 {
+		background-image: url(../images/img_0879.jpg);
+		height: 350px;
+	}
+	.photo #number {
+		margin: auto;
+		height: auto;
+	}
+	#content .text {
+		width: 490px;
+		margin-left: 395px;
+	}
+
+	#content ul {
+		list-style: none;
+		margin-left: 20px;
+		padding-left: 0;
+		text-indent: -24px;
+	}
+	#content li {
+		margin: 0 0 10px;
+	}
+
+	#content input {
+		margin-right: 5px;
+	}
+.button {
+	bottom: 10px;
+	/*margin-top: 50px;*/
+	position: absolute;
+	right: 30px;
+	text-align: center;
+}
+	button, input[type='submit'] {
+		font-size: 125%;
+		padding: 5px;
+	}
+.super {
+	font-size: 75%;
+	position: relative;
+	top: -0.4em;
+}
+.page {
+	display: none;
+	min-height: 520px;
+	position: relative;
+	_height: 520px;
+}
+
+/* Modal Windows */
+.dialog {
+	background: #fff;
+	border-radius: 5px;
+	height: 100px;
+	padding: 10px;
+	text-align: center;
+	width: 300px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+/*
+.socialmedia {
+	background: transparent url(../images/socialmedia.png);
+	border-radius: 2px;
+	display: inline-block;
+	height: 18px;
+	width: 80px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+*/
+
+#content .socialmedia img {
+	border: 0px;
+	float: none;
+	margin-right: 3px;
+}
