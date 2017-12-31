@@ -1,4 +1,4 @@
-title: Gustavson Post-Christmas Quiz 2013
+title: Gustavson Family<br>Post-Christmas Quiz 2017
 markdown: redcarpet
 pygments: true
 exclude:
@@ -14,3 +14,4 @@ exclude:
     - config.ru
     - vendor
 destination: ./public
+year: 2017

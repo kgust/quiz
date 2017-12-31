@@ -32,7 +32,7 @@ layout: quiz
             <a class="next disabled" title="Disabled until all questions are answered.">What's my score?</a>
           {% endif %}
       </p>
-      <div class="photo"><img id="photo{{page.number}}" src="/images/2013/{{page.image}}" /></div>
+      <div class="photo"><img id="photo{{page.number}}" src="/images/{{ site.year }}/{{page.image}}" /></div>
       <div class="clear">
         <p> </p>
       </div>
@@ -54,7 +54,7 @@ layout: quiz
     if (completed) {
 
       $('input[type="radio"]').prop('disabled', true);
-      var answers = store.get('answers'); 
+      var answers = store.get('answers');
       var answer = answers[{{page.number|minus:1}}];
       var key = answer_keys[{{page.number|minus:1}}];
 
@@ -65,7 +65,7 @@ layout: quiz
     } else {
 
       $('form :input').on('change', function(e) {
-        var answers = store.get('answers')||[]; 
+        var answers = store.get('answers')||[];
         var answer = parseInt($('form input:checked').val());
         answers[{{page.number}}-1] = answer;
         store.set('answers', answers);
