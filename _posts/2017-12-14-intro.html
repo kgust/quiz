@@ -64,10 +64,10 @@ $('a.next').on('click', function(ev) {
           }
       );
 
- } else {
+  } else {
 
       var messi = new Messi(
-            'Would you like to reset the quiz or continue where you left off?', {
+          'Would you like to reset the quiz or continue where you left off?', {
               title: 'You have an unfinished quiz',
               width: "300px",
               buttons: [
@@ -75,12 +75,12 @@ $('a.next').on('click', function(ev) {
                   {id: 1, label: 'Continue', val: false}
               ],
               callback: function(val) {
-                  if (val) {
+                  if (val === 'true') {
                       store.remove('answers');
                       store.remove('completed');
                       window.location = '/question/1/';
                   } else {
-                      answers = store.get('answers');
+                      var answers = store.get('answers');
                       for (var index=0; index <= 9; index++) {
                           if (typeof answers[index] === 'undefined' || answers[index] === null) {
                               window.location = '/question/' + (index+1) + '/';
@@ -92,11 +92,9 @@ $('a.next').on('click', function(ev) {
               }
           }
       );
-
   }
 
   return false;
-
 });
 </script>
 
