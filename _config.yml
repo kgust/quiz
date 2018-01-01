@@ -11,7 +11,13 @@ exclude:
     - Gemfile.lock
     - .git
     - .gitignore
+    - tags*
     - config.ru
+    - package.json
+    - yarn.lock
+    - index.js
+    - node_modules
+    - webpack.config.js
     - vendor
 destination: ./public
 year: 2017

@@ -6,23 +6,27 @@ image: family.jpg
 ---
 
 <div id="intro" class="page">
-    <div class="photo"><img id="photo0" src="/images/2017/{{page.image}}" /></div>
-    <div class="text">
+    <div class="photo col-sm-5 col-xs-12">
+        <img id="photo0" src="/images/2017/{{page.image}}" />
+    </div>
+    <div class="text col-sm-7 col-xs-12">
         <p>
-          Since the holidays have recently passed, it's time to take {{ site.title }}!
+          Since the holidays have recently passed, it's time to take Gustavson Family Post-Christmas Quiz 2017!
         </p>
         <p>
           We welcome people of all ages to test their wit and wisdom.  Newcomers
           and long-time recipients will have fun completing the 10 multiple-choice
           questions.
         </p>
-        <p>Do your best, then let us know how you scored!</p>
+        <p>This year, in addition to our traditional quiz, we introduce a <a href="https://play.kahoot.it/#/?quizId=1db6cf3e-a817-4ca6-b690-6a4fc5203926">Kahoot!</a> version of the quiz. Play with friends!</p>
+        <p>Whichever style you choose, do your best then let us know how you scored!</p>
     </div>
     <div class="clear">
         <p> </p>
     </div>
     <p class="buttons">
-        <a class="next" href="/question/1">Start the Quiz</a>
+        <a class="button" href="https://play.kahoot.it/#/?quizId=1db6cf3e-a817-4ca6-b690-6a4fc5203926">Play Kahoot! Quiz</a>
+        <a class="button next" href="/question/1">Play Traditional Quiz</a>
     </p>
 </div>
 
@@ -41,7 +45,7 @@ $('a.next').on('click', function(ev) {
 
        var messi = new Messi(
           'Would you like to reset the quiz or see your score?', {
-              title: 'You have an finished quiz',
+              title: 'You have a finished quiz',
               width: "300px",
               buttons: [
                   {id: 0, label: 'Reset', val: true},
@@ -49,7 +53,7 @@ $('a.next').on('click', function(ev) {
               ],
               viewport: { top: 0, left: 0 },
               callback: function(val) {
-                  if (val) {
+                  if (val === 'true') {
                       store.remove('answers');
                       store.remove('completed');
                       window.location = '/question/1/';

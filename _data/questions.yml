@@ -1,0 +1,93 @@
+- question: This question is not used
+  answers:
+    - nada
+
+- question: On Kevin's 50th birthday Abby made something for him. What was it?
+  answers:
+    - Grilled Cheese Sandwich
+    - Pillow
+    - Woman's Dress
+    - Quilt
+  correct: 4
+  image: Kevin's 50th Birthday Quilt.jpg
+
+- question: "True or False: Rose enjoys volunteering with Grace's class for field trips and parties."
+  answers:
+    - "True"
+    - "False"
+    - Maybe
+    - I don't know
+  correct: 1
+  image: Rose-Grace-Soccer.jpg
+
+- question: What is the structure behind us in the photo that we visited in July?
+  answers:
+    - The Rocky Mountains in Colorado
+    - The Grand Canyon in Arizona
+    - Disney World in Florida
+    - A replica of Noah's Ark in Kentucky
+  correct: 4
+  image: Noah's Ark.jpg
+
+- question: Grace joined Girl Scouts. What is NOT one of her adventures from 2017?
+  answers:
+    - She learned to do archery at summer day camp.
+    - She sold cookies (and is selling them now)!
+    - She earned her "use technology for 100,000 hours" patch!
+    - She went horseback riding.
+  correct: 3
+  image: Grace Archery.jpg
+
+- question: Abby has taught 35 students since late July. What is the name of her new business?
+  answers:
+      - Franklin Construction Company
+      - Stencils Arts and Crafts
+      - Blooming Banners
+      - Primrose Sewing
+  correct: 4
+  image: Primrose Class.jpg
+
+- question: What was Kevin's achievement in 2017 as a software developer for Vanderbilt University?
+  answers:
+      - He wrote a book, "How to Raise the Best Daughters Ever!"
+      - He taught Farming 101
+      - He deployed a major upgrade for medical center researchers.
+      - He invented the internet!
+  correct: 3
+  image: Kevin's Desk.jpg
+
+- question: What are some of Abby's sewing accomplishments this past year?
+  answers:
+    - She chaired the costumes team for her high school musical.
+    - She won ribbons at the county and state fairs!
+    - She started a blog (<a href="http://primrose.blog" target="_blank">Primrose.blog</a>)
+    - All of the above!
+  correct: 4
+  image: Abby's State Fair Ribbons.jpg
+
+- question: What is one of our family's holiday traditions in Nashville?
+  answers:
+      - Going surfing at Radnor Lake
+      - Going to see the ICE! sculptures at Opryland
+      - Walking in the Brentwood Desert
+      - Snowmobiling in Spring Hill
+  correct: 2
+  image: ICE 2017.jpg
+
+- question: What license did Abby earn in December?
+  answers:
+      - Southeastern Carpentry License
+      - Nashville Bow Hunter's License
+      - Midwest Cosmetology License
+      - Tennessee Drivers License
+  correct: 4
+  image: Abby's Driver's License.jpg
+
+- question: Which aspiring computer programmer and animator helped create the Chrismas Quiz for her family?
+  answers:
+      - Rose
+      - Grace
+      - Kevin
+      - Abby
+  correct: 2
+  image: Grace, Super Hero.jpg

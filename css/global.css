@@ -1,10 +1,10 @@
 body {
     font:       18px/1.4 'Amaranth', sans-serif;
     margin:     0;
-    /*background: #000000 url(/images/bg.jpg) repeat-x;*/
-    position:   relative;
     background: url(/images/background.png) repeat 5% 5%;
+    position:   relative;
 }
+
 #midground {
     background: url(/images/midground.png) repeat 20% 20%;
     position: absolute;
@@ -17,6 +17,7 @@ body {
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 2;
 }
+
 noscript div {
     background: transparent url(../images/content_background.png);
     border-radius: 7px;
@@ -47,13 +48,14 @@ canvas {
 .clear {
     clear: both;
 }
-#article {
+
+article {
     border-radius: 7px;
     margin: 0 auto;
     min-height: 900px;
     padding: 20px;
     position: relative;
-    /*width: 960px;*/
+    /*width: 960px; */
     -ms-border-radius: 7px;
     _height: 900px;
     z-index: 100;
@@ -61,8 +63,7 @@ canvas {
 
 #content {
     filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#E7FFFFFF', EndColorStr='#E7FFFFFF');
-
-    background: #ddd;
+    background-color: #fff;
     box-shadow: 0 0 10px 10px #fff;
     /*border-radius: 7px;*/
     margin: 0 auto 25px;
@@ -87,14 +88,16 @@ canvas {
         background-repeat: no-repeat;
         border-radius: 10px;
         top: 0;
-        height: 400px;
+        max-height: 400px;
         margin: 0 10px 0 0;
-        width: 400px;
+        max-width: 400px;
     }
         .photo img {
             border-radius: 10px;
             display:       block;
             margin:        auto;
+            max-height:    400px;
+            max-width:     400px;
         }
     #photo0 {
         margin-top: 25px;
@@ -144,8 +147,7 @@ canvas {
         margin-right: 5px;
     }
 
-
-.next, .prev {
+.button {
     background:      #fff;
     border-radius:   7px;
     border:          1px solid #888;
@@ -169,7 +171,7 @@ canvas {
     top: -0.4em;
 }
 .page {
-    display:        none;
+    /*display:        none;*/
     min-height:     520px;
     position:       relative;
     padding-bottom: 40px;
