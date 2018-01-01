@@ -3,16 +3,19 @@
 <head>
     <title>{{ site.title }}</title>
     <meta name="language" content="en_US" />
+    <meta charset="utf-8">
     <meta name="Content-Type" content="text/html;charset=utf8" />
-    <meta name="viewport" content="width=480">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href='http://fonts.googleapis.com/css?family=Concert+One|Amaranth' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="/css/messi.css" />
     <link rel="stylesheet" type="text/css" href="/css/global.css" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/store.min.js"></script>
+    <script type="text/javascript" src="/js/score.js"></script>
 </head>
-<body onload="init()">
-  <div id="midground"></div>
+<body>
+    <div id="midground"></div>
     <div id="foreground"></div>
     {% comment %}
     <script type="text/javascript" src="/js/ThreeCanvas.js"></script>
@@ -21,22 +24,30 @@
     <div id="snow-container"></div>
     {% endcomment %}
     <script type="text/javascript">
-      var answer_keys = [4, 2, 3, 1, 2, 4, 1, 3, 2, 3];
+        var answer_keys = [];
+        {% for question in site.data.questions %}
+            answer_keys.push({{question.correct}});
+        {% endfor %}
     </script>
-    <div id="article">
+    <article class="container">
         <noscript>
             <div>Warning: Your browser has javascript support turned off!<br/>
             This page will not render or operate correctly.</div>
         </noscript>
 
-        <h1>Welcome to the {{site.title}}</h1>
+        <header>
+            <h1>Welcome to the {{site.title}}</h1>
+        </header>
 
         <div id="content">
-        {{ content }}
+            <div class='container'>
+                <div class='row'>
+                    {{ content }}
+                </div>
+            </div>
         </div>
-    </div>
-
-    <script type="text/javascript" src="/js/score.js"></script>
+    </article>
+    {% comment %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -47,5 +58,6 @@
       ga('send', 'pageview');
 
     </script>
+    {% endcomment %}
 </body>
 </html>

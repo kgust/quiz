@@ -1,4 +1,4 @@
-title: Gustavson Post-Christmas Quiz 2013
+title: Gustavson Family<br>Post-Christmas Quiz 2017
 markdown: redcarpet
 pygments: true
 exclude:
@@ -11,6 +11,13 @@ exclude:
     - Gemfile.lock
     - .git
     - .gitignore
+    - tags*
     - config.ru
+    - package.json
+    - yarn.lock
+    - index.js
+    - node_modules
+    - webpack.config.js
     - vendor
 destination: ./public
+year: 2017
