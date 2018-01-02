@@ -1,17 +1,25 @@
+@keyframes background-snow {
+    0% { background-position-y: 0%; }
+    100% { background-position-y: 100%; }
+}
+
 body {
+    animation: background-snow 60s linear infinite;
+    background: url(../images/background.png) repeat 5% 5%;
     font:       18px/1.4 'Amaranth', sans-serif;
     margin:     0;
-    background: url(../images/background.png) repeat 5% 5%;
     position:   relative;
 }
 
 #midground {
+    animation: background-snow 40s linear infinite;
     background: url(../images/midground.png) repeat 20% 20%;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 1;
 }
 #foreground {
+    animation: background-snow 30s linear infinite;
     background: url(../images/foreground.png) repeat 90% 110%;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
