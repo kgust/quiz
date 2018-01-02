@@ -1,5 +1,5 @@
 ---
-layout: quiz
+layout: base
 question: intro
 permalink: /
 image: family.jpg
@@ -7,11 +7,11 @@ image: family.jpg
 
 <div id="intro" class="page">
     <div class="photo col-sm-5 col-xs-12">
-        <img id="photo0" src="/images/2017/{{page.image}}" />
+        <img id="photo0" src="images/2017/{{page.image}}" />
     </div>
     <div class="text col-sm-7 col-xs-12">
         <p>
-          Since the holidays have recently passed, it's time to take Gustavson Family Post-Christmas Quiz 2017!
+          Since the holidays have recently passed, it's time to take the Gustavson Family Post-Christmas Quiz 2017!
         </p>
         <p>
           We welcome people of all ages to test their wit and wisdom.  Newcomers
@@ -26,11 +26,11 @@ image: family.jpg
     </div>
     <p class="buttons">
         <a class="button" href="https://play.kahoot.it/#/?quizId=1db6cf3e-a817-4ca6-b690-6a4fc5203926">Play Kahoot! Quiz</a>
-        <a class="button next" href="/question/1">Play Traditional Quiz</a>
+        <a class="button next" href="question/1">Play Traditional Quiz</a>
     </p>
 </div>
 
-<script src="/js/messi.min.js"></script>
+<script src="js/messi.min.js"></script>
 <script type="text/javascript">
 
 $('a.next').on('click', function(ev) {
@@ -39,7 +39,7 @@ $('a.next').on('click', function(ev) {
   completed = store.get('completed');
   if (!answers) {
 
-      window.location = '/question/1/';
+      window.location = 'question/1';
 
   } else if (completed) {
 
@@ -56,9 +56,9 @@ $('a.next').on('click', function(ev) {
                   if (val === 'true') {
                       store.remove('answers');
                       store.remove('completed');
-                      window.location = '/question/1/';
+                      window.location = 'question/1';
                   } else {
-                      window.location = '/score/';
+                      window.location = 'score';
                   }
               }
           }
@@ -78,15 +78,15 @@ $('a.next').on('click', function(ev) {
                   if (val === 'true') {
                       store.remove('answers');
                       store.remove('completed');
-                      window.location = '/question/1/';
+                      window.location = 'question/1';
                   } else {
                       var answers = store.get('answers');
                       for (var index=0; index <= 9; index++) {
                           if (typeof answers[index] === 'undefined' || answers[index] === null) {
-                              window.location = '/question/' + (index+1) + '/';
+                              window.location = 'question/' + (index+1);
                               return false;
                           }
-                          window.location = '/question/10/';
+                          window.location = 'question/10';
                       }
                   }
               }

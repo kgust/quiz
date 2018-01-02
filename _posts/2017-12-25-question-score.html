@@ -1,73 +1,73 @@
 ---
-layout: quiz
+layout: base
 permalink: /score
 ---
-        <div id="score" class="page">
-            <div class="photo" id="number"></div>
-            <div class="text">
-                <h2>Thanks for taking the {{site.title}}!</h2>
-                <h3>Your final score is <span id="answer">??</span> out of a possible 10 points!</h3>
-                <p id="not_perfect" style="display:none">
-                    Why don't you go back through the quiz and see what questions
-                    you missed.
-                </p>
 
-                <p style="font-weight: bold;">
-                    Now it's your turn.  We want to hear how you did on the quiz.
-                    Tell us your score and what you liked about it.
-                </p>
+<div id="score" class="page">
+    <div class="photo" id="number"></div>
+    <div class="text">
+        <h2>Thanks for taking the {{site.title}}!</h2>
+        <h3>Your final score is <span id="answer">??</span> out of a possible 10 points!</h3>
+        <p id="not_perfect" style="display:none">
+            Why don't you go back through the quiz and see what questions
+            you missed.
+        </p>
 
-                <p style="font-weight: bold;">We also invite you connect with us online.</p>
+        <p style="font-weight: bold;">
+            Now it's your turn.  We want to hear how you did on the quiz.
+            Tell us your score and what you liked about it.
+        </p>
 
-                <p id="rose" class="socialmedia">Rose's Social Media Connections:<br/>
-                <!--
-                    <a href='RGADDR' target="_blank"><img src='/images/Vector Social Media Icons/32px/email.png' alt="Email" title="Email"></a>
-                -->
-                    <a href='http://www.facebook.com/people/Rose-Egbert-Gustavson/1404969224' target="_blank"><img src='/images/Vector Social Media Icons/32px/facebook.png' alt="Facebook" title="Facebook"></a>
-                    <a href='http://www.linkedin.com/in/rosegustavson' target="_blank"><img src='/images/Vector Social Media Icons/32px/linkedin.png' alt="LinkedIn" title="LinkedIn"></a>
-                    <!--<a href='https://plus.google.com/s/rose%20gustavson' target="_blank"><img src='/images/google-plus-icon.png' alt="Google+" title="Google+"></a>-->
-                </p>
+        <p class="facebook">Don't forget to like <a href="https://www.facebook.com/Primrose-Sewing-207436749661366/">Primrose Sewing</a> on Facebook!</p>
+        <!--
+        <p style="font-weight: bold;">We also invite you connect with us online.</p>
 
-                <p id="kevin" class="socialmedia">Kevin's Social Media Connections:<br/>
-                    <a href='https://plus.google.com/s/kevin%20gustavson' target="_blank"><img src='/images/google-plus-icon.png' alt="Google+" title="Google+"></a>
-                    <a href='http://www.linkedin.com/in/kevingustavson' target="_blank"><img src='/images/Vector Social Media Icons/32px/linkedin.png' alt="LinkedIn" title="LinkedIn"></a>
-                    <a href='http://www.facebook.com/kdgustavson' target="_blank"><img src='/images/Vector Social Media Icons/32px/facebook.png' alt="Facebook" title="Facebook"></a>
-                </p>
+        <p id="rose" class="socialmedia">Rose's Social Media Connections:<br/>
+            <a href='http://www.facebook.com/people/Rose-Egbert-Gustavson/1404969224' target="_blank"><img src='../images/Vector Social Media Icons/32px/facebook.png' alt="Facebook" title="Facebook"></a>
+            <a href='http://www.linkedin.com/in/rosegustavson' target="_blank"><img src='../images/Vector Social Media Icons/32px/linkedin.png' alt="LinkedIn" title="LinkedIn"></a>
+        </p>
 
-                <p class="buttons">
-                    <a class="button prev" href="/question/10">Go Back</a>
-                </p>
-            </div>
-            <div class="clear">
-                <p> </p>
-            </div>
-        </div>
-        <script type="text/javascript">
-        (function() {
-          store.set('completed', true);
+        <p id="kevin" class="socialmedia">Kevin's Social Media Connections:<br/>
+            <a href='https://plus.google.com/s/kevin%20gustavson' target="_blank"><img src='../images/google-plus-icon.png' alt="Google+" title="Google+"></a>
+            <a href='http://www.linkedin.com/in/kevingustavson' target="_blank"><img src='../images/Vector Social Media Icons/32px/linkedin.png' alt="LinkedIn" title="LinkedIn"></a>
+            <a href='http://www.facebook.com/kdgustavson' target="_blank"><img src='../images/Vector Social Media Icons/32px/facebook.png' alt="Facebook" title="Facebook"></a>
+        </p>
+        -->
 
-          var answers = store.get('answers');
-          var correct = 0;
+        <p class="buttons">
+            <a class="button prev" href="question/10">Go Back</a>
+        </p>
+    </div>
+    <div class="clear">
+        <p> </p>
+    </div>
+</div>
+<script type="text/javascript">
+(function() {
+  store.set('completed', true);
 
-          for (var index=0; index < 10; index++) {
-            if (answers[index] === answer_keys[index]) {
-              correct++;
-            }
-          }
+  var answers = store.get('answers');
+  var correct = 0;
 
-          $('#answer').text(correct);
+  for (var index=0; index < 10; index++) {
+    if (answers[index] === answer_keys[index]) {
+      correct++;
+    }
+  }
 
-          $img = $('<img/>', {
-            src: '/images/number-' + correct + '-' + getRandomInt(0,3) + '.png',
-            height: '375px',
-            width: '400px'
-          }).appendTo('#number');
+  $('#answer').text(correct);
 
-         })();
+  $img = $('<img/>', {
+    src: './images/number-' + correct + '-' + getRandomInt(0,3) + '.png',
+    height: '375px',
+    width: '400px'
+  }).appendTo('#number');
 
-        // Returns a random integer between min and max
-        // Using Math.round() will give you a non-uniform distribution!
-        function getRandomInt(min, max) {
-          return Math.floor(Math.random() * (max - min + 1) + min);
-        }
-        </script>
+ })();
+
+// Returns a random integer between min and max
+// Using Math.round() will give you a non-uniform distribution!
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+</script>

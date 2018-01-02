@@ -1,6 +1,6 @@
 title: Gustavson Family<br>Post-Christmas Quiz 2017
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 exclude:
     - libs
     - misc

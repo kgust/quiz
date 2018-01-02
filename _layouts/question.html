@@ -1,16 +1,16 @@
 ---
-layout: quiz
+layout: questions_base
 ---
   <form method="get"
     {% if page.number < 10 %}
-      action="/question/{{page.number|plus:1}}/"
+      action="{{page.number|plus:1}}/"
     {% else %}
-      action="/score/"
+      action="../score/"
     {% endif %}
   />
     <div id="q1" class="page">
       <div class="photo">
-        <img id="photo{{page.number}}" src="/images/{{ site.year }}/{{site.data.questions[page.number].image}}" />
+        <img id="photo{{page.number}}" src="../images/{{ site.year }}/{{site.data.questions[page.number].image}}" />
       </div>
       <div class="text">
         <h2>Question {{page.number}}</h2>
@@ -26,13 +26,13 @@ layout: quiz
       </div>
       <p class="buttons">
           {% if page.number > 1 %}
-            <a class="button prev" href="/question/{{page.number|minus:1}}">Go Back</a>
+            <a class="button prev" href="{{page.number|minus:1}}">Go Back</a>
           {% else %}
-            <a class="button prev" href="/">Go Back</a>
+            <a class="button prev" href="../">Go Back</a>
           {% endif %}
 
           {% if page.number < 10 %}
-            <a class="button next" href="/question/{{page.number|plus:1}}">Next Question</a>
+            <a class="button next" href="{{page.number|plus:1}}">Next Question</a>
           {% else %}
             <a class="button disabled next" title="Disabled until all questions are answered.">What's my score?</a>
           {% endif %}
@@ -90,7 +90,7 @@ layout: quiz
         $('.next')
             .removeAttr('title')
             .removeClass('disabled')
-            .attr('href', '/score');
+            .attr('href', '../score');
       }
     }
     enableNext();

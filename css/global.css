@@ -1,18 +1,18 @@
 body {
     font:       18px/1.4 'Amaranth', sans-serif;
     margin:     0;
-    background: url(/images/background.png) repeat 5% 5%;
+    background: url(../images/background.png) repeat 5% 5%;
     position:   relative;
 }
 
 #midground {
-    background: url(/images/midground.png) repeat 20% 20%;
+    background: url(../images/midground.png) repeat 20% 20%;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 1;
 }
 #foreground {
-    background: url(/images/foreground.png) repeat 90% 110%;
+    background: url(../images/foreground.png) repeat 90% 110%;
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: 2;
@@ -193,4 +193,15 @@ article {
     border: 0px;
     float: none;
     margin-right: 3px;
+}
+
+.facebook {
+    background: rgb(41, 72, 125);
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    padding: 15px 15px;
+}
+.facebook a {
+    color: #fff;
 }
