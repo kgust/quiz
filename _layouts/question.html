@@ -1,99 +1,101 @@
 ---
 layout: questions_base
 ---
-  <form method="get"
-    {% if page.number < 10 %}
-      action="{{page.number|plus:1}}/"
-    {% else %}
-      action="../score/"
-    {% endif %}
-  />
-    <div id="q1" class="page">
-      <div class="photo">
-        <img id="photo{{page.number}}" src="../images/{{ site.year }}/{{site.data.questions[page.number].image}}" />
-      </div>
-      <div class="text">
-        <h2>Question {{page.number}}</h2>
-        <h3>{{site.data.questions[page.number].question}}</h3>
-        <ul>
-          {% for answer in site.data.questions[page.number].answers %}
-            <li><label>
-              <input type="radio" name="q{{page.number}}" value="{{forloop.index}}" />
-              {{ answer }}
-            </label></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <p class="buttons">
-          {% if page.number > 1 %}
-            <a class="button prev" href="{{page.number|minus:1}}">Go Back</a>
-          {% else %}
-            <a class="button prev" href="../">Go Back</a>
-          {% endif %}
+<div class="row">
+    <form method="get"
+        {% if page.number < 10 %}
+            action="{{page.number|plus:1}}/"
+        {% else %}
+            action="../score/"
+        {% endif %}
+    />
+        <div id="q1" class="page">
+            <div class="photo">
+                <img id="photo{{page.number}}" src="../images/{{ site.year }}/{{site.data.questions[page.number].image}}" />
+            </div>
+            <div class="text">
+                <h2>Question {{page.number}}</h2>
+                <h3>{{site.data.questions[page.number].question}}</h3>
+                <ul>
+                    {% for answer in site.data.questions[page.number].answers %}
+                    <li><label>
+                        <input type="radio" name="q{{page.number}}" value="{{forloop.index}}" />
+                        {{ answer }}
+                    </label></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="clear"><p> </p></div>
+        </div>
+        <div class="row">
+            <p class="buttons">
+                {% if page.number > 1 %}
+                <a class="button prev" href="{{page.number|minus:1}}">Go Back</a>
+                {% else %}
+                <a class="button prev" href="../">Go Back</a>
+                {% endif %}
 
-          {% if page.number < 10 %}
-            <a class="button next" href="{{page.number|plus:1}}">Next Question</a>
-          {% else %}
-            <a class="button disabled next" title="Disabled until all questions are answered.">What's my score?</a>
-          {% endif %}
-      </p>
-      <div class="clear">
-        <p> </p>
-      </div>
-    </div>
-  </form>
+                {% if page.number < 10 %}
+                <a class="button next" href="{{page.number|plus:1}}">Next Question</a>
+                {% else %}
+                <a class="button disabled next" title="Disabled until all questions are answered.">What's my score?</a>
+                {% endif %}
+            </p>
+        </div>
+    </form>
+</div>
 
-  <script type="text/javascript">
+<script type="text/javascript">
     var answers = store.get('answers') || [];
-
     var index = answers[{{page.number|minus:1}}];
-    if (index > 0) {
-      $input = $('form input:eq(' + (index-1) + ')').click();
-      $input.parents('label').css('fontWeight', 'bold');
-    }
 
+    if (index > 0) {
+        $input = $('form input:eq(' + (index-1) + ')').click();
+        $input.parents('label').css('fontWeight', 'bold');
+    }
 
     var completed = store.get('completed');
 
     if (completed) {
-      $('input[type="radio"]').prop('disabled', true);
-      var answers = store.get('answers');
-      var answer = answers[{{page.number|minus:1}}];
-      var key = answer_keys[{{page.number|minus:1}}];
+        $('input[type="radio"]').prop('disabled', true);
+        var answers = store.get('answers');
+        var answer = answers[{{page.number|minus:1}}];
+        var key = answer_keys[{{page.number|minus:1}}];
 
-      if (answer !== key) {
-        $('input:eq(' + (key-1) + ')').parents('li').addClass('correct');
-      }
+        if (answer !== key) {
+          $('input:eq(' + (key-1) + ')').parents('li').addClass('correct');
+        }
 
     } else {
 
-      $('form :input').on('change', function(e) {
-        var answers = store.get('answers')||[];
-        var answer = parseInt($('form input:checked').val());
-        answers[{{page.number}}-1] = answer;
-        store.set('answers', answers);
-        $('label').css('fontWeight', 'normal');
-        $(this).parent().css('fontWeight', 'bold');
-      });
+        $('form :input').on('change', function(e) {
+          var answers = store.get('answers')||[];
+          var answer = parseInt($('form input:checked').val());
+          answers[{{page.number}}-1] = answer;
+          store.set('answers', answers);
+          $('label').css('fontWeight', 'normal');
+          $(this).parent().css('fontWeight', 'bold');
+        });
 
     }
 
-  {% if page.number > 9 %}
-    function enableNext() {
-      var count = 0;
-      $.each(store.get('answers'), function(index, answer) {
-        if (answer > 0) {
-          count++;
+    {% if page.number > 9 %}
+        function enableNext() {
+            var count = 0;
+            $.each(store.get('answers'), function(index, answer) {
+                if (answer > 0) {
+                    count++;
+                }
+            });
+            if (count === 10) {
+                $('.next')
+                    .removeAttr('title')
+                    .removeClass('disabled')
+                    .attr('href', '../score');
+            }
         }
-      });
-      if (count === 10) {
-        $('.next')
-            .removeAttr('title')
-            .removeClass('disabled')
-            .attr('href', '../score');
-      }
-    }
-    enableNext();
-    $('form :input').on('change', enableNext);
-  {% endif %}
-  </script>
+
+        enableNext();
+        $('form :input').on('change', enableNext);
+    {% endif %}
+</script>

@@ -147,23 +147,25 @@ article {
         margin-right: 5px;
     }
 
+.buttons {
+    bottom:      0;
+    padding-top: 10px;
+    text-align:  right;
+}
 .button {
     background:      #fff;
     border-radius:   7px;
     border:          1px solid #888;
     color:           #000;
     font:            125%/1.0 fantasy;
+    line-height:     2.2em;
     padding:         7px 15px 0;
     text-decoration: none;
-}
-.disabled {
-    color: #666;
+    white-space:     nowrap;
 }
 
-.buttons {
-    bottom:   0;
-    position: absolute;
-    right:    10px;
+.disabled {
+    color: #666;
 }
 .super {
     font-size: 75%;
@@ -171,8 +173,6 @@ article {
     top: -0.4em;
 }
 .page {
-    /*display:        none;*/
-    min-height:     520px;
     position:       relative;
     padding-bottom: 40px;
     _height:        520px;
