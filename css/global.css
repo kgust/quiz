@@ -83,13 +83,6 @@ article {
         margin-right: 10px;
         float: left;
     }
-    /*
-    #content img {
-        display: inline-block;
-        margin: 0 10px 0 0;
-        float: left;
-    }
-    */
     .photo {
         background-color: transparent;
         background-position: center center;
@@ -105,7 +98,8 @@ article {
             display:       block;
             margin:        auto;
             max-height:    400px;
-            max-width:     400px;
+            /* max-width:     400px; */
+            width:         100%;
         }
     #photo0 {
         margin-top: 25px;
